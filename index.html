@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Главная</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+    <script src="js/jquery-3.6.3.js"></script>
+    <script src="js/index.js"></script>
+</head>
+
+<body>
+    <div class="flex">
+        <header>
+            <div class="header__wrapper">
+                <a href="" class="header__left">
+                    <img class="header__logo" src="img/LogoM.svg" alt="Logotype">
+                    <div class="header__name">Play Bet Wins</div>
+                </a>
+                <div class="header__center">
+                    <a href="game-catalog.html" class="menu-button button__link">Игры</a>
+                    <a href="store.html" class="menu-button button__link">Магазин</a>
+                    <a href="rates.html" class="menu-button button__link">Рейтинг</a>
+                </div>
+
+                <div id="header_unlogin" class="header__right">
+                    <div class="menu-button button__link">Войти</div>
+                </div>
+            </div>
+        </header>
+        <main>
+            <div class="title__wrapper">
+                <div class="title__box">
+                    <p class="title">
+                        Взгляни на бессмертные игры по-новому!
+                    </p>
+                    <p class="description">
+                        Крестики-нолики, шахматы, <br> морской бой и многие другие!
+                    </p>
+                    <div class="menu-button button__registration">РЕГИСТРАЦИЯ</div>
+                </div>
+                <img class="mascot" src="img/mascot-blue.svg" alt="mish">
+            </div>
+            <div class="blue__rectangle">
+                <div class="main__wrapper">
+                    <div class="white__square">
+                        <p class="neheader__name">Мировой рейтинг</p>
+                        <p class="neheader__text"> Бросьте вызов лучшим игрокам по всему миру с помощью нашей уникаотной
+                            системы
+                            ежедневных турниров и станьте номером один!</p>
+                        <img class="neheader__logo" src="img/icons/crown-blue.svg" alt="korona">
+                    </div>
+                    <div class="white__square">
+                        <p class="neheader__name">Игра с другом</p>
+                        <p class="neheader__text"> Бросьте вызов совнме другу, <br> случайному игроку <br> или сыграй с
+                            NPS
+                        </p>
+                        <img class="neheader__logo" src="img/icons/friends-blue.svg" alt="druzya">
+                    </div>
+                    <div class="white__square">
+                        <p class="neheader__name">Магазин</p>
+                        <p class="neheader__text"> Чем больше вы играете, тем больше зарабатываете игровых монет. Вы
+                            можете
+                            потратить их
+                            на игровые скины и красивые аватарки!</p>
+                        <img class="neheader__logo" src="img/icons/shop-cart-blue.svg" alt="telejka">
+                    </div>
+                </div>
+            </div>
+            <div class="main__wrapper">
+                <div class="boy__with__money">
+                    <p class="title">Ставки</p>
+                    <img class="boy__money" src="img/boy-with-money.svg" alt="boy_with_money">
+                    <p class="discription"> Поставь на лучшего игрока или своего <br> фаворита внутрисервисную валюту
+                        <br> и
+                        испытай свою удачу!
+                    </p>
+                </div>
+            </div>
+        </main>
+        <footer>
+            <div class="grey__rectangle">
+                <div class="footer__discription">
+                    <p class="footer__name">Подпишись на нас</p>
+                    <p class="footer__text"> VK <br> Telegram <br> YouTube <br> RuTube</p>
+                </div>
+                <div class="footer__discription">
+                    <p class="footer__name">Ресурсы</p>
+                    <p class="footer__text"> Блог <br> Разработчики <br> Конфиденциальность <br> Условия и
+                        положения</p>
+                </div>
+                <div class="footer__discription">
+                    <p class="footer__name">Служба поддержки</p>
+                    <p class="footer__text"> Email: *****</ps>
+                </div>
+            </div>
+            <div class="blue__grey__rectangle">
+                <p class="blue__grey__rectangle__text"> © 2023 Copyright: ссылка на сайт</ps>
+            </div>
+        </footer>
+    </div>
+
+    <div id="modal-login" class="modal_window">
+        <div class="registration_window">
+            <h2 class="title">Вход</h2>
+            <img class="mascot" src="img/mascot-blue.svg" alt="Mascot mouse">
+            <div class="error-message">Текст ошибки</div>
+            <input class="modal_input" type="text" name="username" placeholder="Логин" pattern="[a-zA-Z0-9]+" required>
+            <input class="modal_input" type="password" name="password" placeholder="Пароль" required>
+            <div class="support_flex">
+                <a href="" class="modal_support">Забыли пароль?</a>
+                <div class="modal_support">Регистрация</div>
+            </div>
+            <div class="menu-button login_button">Войти</div>
+        </div>
+    </div>
+
+    <div id="modal-register" class="modal_window">
+        <div class="registration_window">
+            <h2 class="title">Регистрация</h2>
+            <div class="error-message">Текст ошибки</div>
+            <input class="modal_input" type="text" name="username" placeholder="Придумайте логин" pattern="[a-zA-Z0-9]+"
+                required>
+            <input class="modal_input" type="password" name="password" placeholder="Придумайте пароль" required>
+            <input class="modal_input" type="password" name="password-repeat" placeholder="Повторите пароль" required>
+            <div class="modal_support">Уже есть аккаунт? Войти</div>
+            <div class="menu-button reg_button">Зарегистрироваться</div>
+        </div>
+    </div>
+
+</body>
+
+</html>

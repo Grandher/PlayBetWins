@@ -1,0 +1,17 @@
+<svg width="45" height="45" viewBox="0 0 45 45" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_50_813)">
+<circle cx="22.5" cy="22.5" r="22.5" fill="#0E87DF"/>
+<mask id="mask0_50_813" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="45" height="45">
+<circle cx="22.5" cy="22.5" r="21" fill="#C4C4C4" stroke="#0E87DF" stroke-width="3"/>
+</mask>
+<g mask="url(#mask0_50_813)">
+<ellipse cx="22.4984" cy="39.5997" rx="17.1" ry="9.9" fill="#EFF7FB"/>
+</g>
+<circle cx="22.4994" cy="19.1249" r="8.1" fill="#EFF7FB"/>
+</g>
+<defs>
+<clipPath id="clip0_50_813">
+<rect width="45" height="45" fill="white"/>
+</clipPath>
+</defs>
+</svg>

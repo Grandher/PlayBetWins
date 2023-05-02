@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Магазин</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+    <script src="js/jquery-3.6.3.js"></script>
+    <script src="js/login.js"></script>
+    <script src="js/store.js"></script>
+</head>
+
+<body>
+    <div class="flex">
+        <header>
+            <div class="header__wrapper">
+                <a href="home.html" class="header__left">
+                    <img class="header__logo" src="img/LogoM.svg" alt="Logotype">
+                    <div class="header__name">Play Bet Wins</div>
+                </a>
+                <div class="header__center">
+                    <a href="game-catalog.html" class="menu-button button__link">Игры</a>
+                    <a href="store.html" class="menu-button button__link">Магазин</a>
+                    <a href="rates.html" class="menu-button button__link">Рейтинг</a>
+                </div>
+
+                <div id="header_unlogin" class="header__right">
+                    <div class="menu-button button__link">Войти</div>
+                </div>
+                <div id="header_login" class="header__right">
+                    <div class="menu-button button__icons">
+                        <img class="icon" src="img/icons/calendar-white.svg" alt="calendar">
+                    </div>
+
+                    <div class="menu-button button__profile">
+                        <img class="icon" src="img/icons/Avatars-1.svg" alt="Avatar">
+                        <img class="icon tick" src="img/icons/tick-down.svg" alt="Tick">
+                        <div class="menu-drop">
+
+                            <div class="drop__wrapper">
+                                <div class="drop-account_info">
+                                    <img width="80px" height="80px" src="img/icons/Avatars-1.svg" alt="Avatar">
+                                    <div class="drop-account_data">
+                                        <div class="nickname">Никнейм</div>
+                                        <div class="balance"><span>1000</span>
+                                            <img width="20px" height="20px" class="drop-account_icon"
+                                                src="img/icons/coins.svg" alt="Coins">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="drop-statistics">
+                                    <div class="drop-stat">
+                                        <div class="drop-stat__number">0</div>
+                                        Побед
+                                    </div>
+                                    <div class="drop-stat">
+                                        <div class="drop-stat__number">0</div>
+                                        Поражений
+                                    </div>
+                                    <div class="drop-stat">
+                                        <div class="drop-stat__number">0</div>
+                                        Ничьих
+                                    </div>
+                                </div>
+                                <a href="account.html" class="drop-button">
+                                    <div class="drop-button_icons">
+                                        <img width="24px" height="24px" src="img/icons/smile_square.svg"
+                                            alt="Profile icon">
+                                    </div>Профиль
+                                </a>
+                                <a href="settings.html" class="drop-button">
+                                    <div class="drop-button_icons">
+                                        <img width="24px" height="24px" src="img/icons/settings-white2.svg"
+                                            alt="Setting icon">
+                                    </div>Настройки профиля
+                                </a>
+                                <a href="scripts/logout.php" class="drop-button">
+                                    <div class="drop-button_icons">
+                                        <img width="20px" height="24px" src="img/icons/door.svg" alt="LogOut icon">
+                                    </div>Выйти из аккаунта
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </header>
+        <main>
+            <div class="blocks">
+                <div class="borderElement1">
+                    <div class="title">МАГАЗИН</div>
+                    <div class="menu_section" type="2">
+                        <img class="shopicons" src="img/icons/face.svg" alt="face icon">
+                        <div class="text"> Эмодзи </div>
+                    </div>
+                    <div class="menu_section selected" type="1">
+                        <img class="shopicons" src="img/icons/user.svg" alt="user icon">
+                        <div class="text"> Аватарки </div>
+                    </div>
+                    <div class="menu_section" type="3">
+                        <img class="shopicons" src="img/icons/plugin.svg" alt="">
+                        <div class="text"> Скины </div>
+                    </div>
+                </div>
+                <div class="borderElement2">
+
+                </div>
+            </div>
+        </main>
+        <!-- Модальное окно входа -->
+        <div id="modal-login" class="modal_window">
+            <div class="registration_window">
+                <h2 class="title">Вход</h2>
+                <img class="mascot" src="img/mascot-blue.svg" alt="Mascot mouse">
+                <div class="error-message">Текст ошибки</div>
+                <input class="modal_input" type="text" name="username" placeholder="Логин" pattern="[a-zA-Z0-9]+" required>
+                <input class="modal_input" type="password" name="password" placeholder="Пароль" required>
+                <div class="support_flex">
+                    <a class="modal_support">Забыли пароль?</a>
+                    <div class="modal_support">Регистрация</div>
+                </div>
+                <div class="menu-button login_button">Войти</div>
+            </div>
+        </div>
+        <!-- Модальное окно регистрации -->
+        <div id="modal-register" class="modal_window">
+            <div class="registration_window">
+                <h2 class="title">Регистрация</h2>
+                <div class="error-message">Текст ошибки</div>
+                <input class="modal_input" type="text" name="username" placeholder="Придумайте логин" pattern="[a-zA-Z0-9]+"
+                    required>
+                <input class="modal_input" type="password" name="password" placeholder="Придумайте пароль" required>
+                <input class="modal_input" type="password" name="password-repeat" placeholder="Повторите пароль" required>
+                <div class="modal_support">Уже есть аккаунт? Войти</div>
+                <div class="menu-button reg_button">Зарегистрироваться</div>
+            </div>
+        </div>
+
+        <!-- Модальное окно подтверждения покупки -->
+        <div id="modal-conf" class="modal_window">
+            <div class="confirmation_window">
+                <h3 class="title__confirmation__window">Вы действительно хотите<br> совершить покупку?</h3>
+                <h3 class="description__confirmation__window">Отменить действие будет невозможно</h3>
+                <div class="button__location">
+                    <div id="buttonPay" class="menu-button button__confirmation">Да</div>
+                    <div class="menu-button button__confirmation">Нет</div>
+                </div>
+            </div>
+        </div>
+        <!-- Модальное окно "Спасибо за покупку" -->
+        <div id="modal-success" class="modal_window">
+            <div class="thanksforpay_window">
+                <h3 class="title__confirmation__window">Спасибо за покупку!</h3>
+                <div class="menu-button button__thanksforpay">Ok!</div>
+            </div>
+        </div>
+
+        <div id="structure">
+            <div class="shop">
+                <div class="shopbottom">
+                    <div class="shopcatalog">
+                        <img class="img-game" src="" alt="">
+                    </div>
+                    <div class="pricebutton">
+                        <div class="text">350</div>
+                        <img class="icon" src="img/icons/coins.svg" alt="Деньги">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

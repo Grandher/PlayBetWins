@@ -1,0 +1,1586 @@
+/*Шрифты*/
+@font-face {
+    font-family: "Tith";
+    src: url("../fonts/TitH.ttf");
+}
+
+@font-face {
+    font-family: "Futura";
+    src: url("../fonts/futura-pt-cond-medium.ttf");
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: "Futura";
+    src: url("../fonts/futura-pt-medium.ttf");
+    font-weight: 450;
+}
+
+@font-face {
+    font-family: "Futura";
+    src: url("../fonts/futura-pt-demi.ttf");
+    font-weight: 600;
+}
+
+@font-face {
+    font-family: "Futura";
+    src: url("../fonts/futura-pt-heavy.ttf");
+    font-weight: 900;
+}
+
+@font-face {
+    font-family: "Futura";
+    src: url("../fonts/futura-pt-bold.ttf");
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: "Futura";
+    src: url("../fonts/futura-pt-book.ttf");
+}
+
+/*Шрифты*/
+/*Общие элементы*/
+:root {
+    --color-basic: #0E87DF;
+    --color-ground: #EFF7FB;
+    --color-black: #000;
+    --color-white: #FFF;
+    --color-light-blue: #95C8E7;
+    --color-blue-grey: #7B98B5;
+    --color-light-grey: #B8C4C4;
+    --color-hover: #3C9AE1;
+}
+
+::-webkit-scrollbar,
+html ::-webkit-scrollbar {
+    height: .9vw;
+    width: .9vw;
+}
+
+::-webkit-scrollbar-track,
+html ::-webkit-scrollbar-track {
+    background: var(--color-ground);
+}
+
+::-webkit-scrollbar-thumb,
+html ::-webkit-scrollbar-thumb {
+    background-color: var(--color-basic);
+    border-radius: .625vw;
+    border: .15vw solid var(--color-ground);
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:focus {
+    transition: background-color 600000s 0s, color 600000s 0s;
+}
+
+button,
+input {
+    outline: none;
+    border: none;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+.flex {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    background-color: var(--color-ground);
+}
+
+/*Общие элементы*/
+/*Заголовок*/
+header {
+    width: 100%;
+    background-color: var(--color-white);
+}
+
+.header__wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 75%;
+    padding-top: 1.45vw;
+    padding-bottom: 1vw;
+    margin: auto;
+}
+
+.header__left,
+.header__right,
+.header__center {
+    display: flex;
+    align-items: center;
+}
+
+.header__logo {
+    display: block;
+    background-repeat: no-repeat;
+    width: 3.5vw;
+    height: 3.5vw;
+}
+
+.header__name {
+    margin-left: 1.1vw;
+    font-family: Futura;
+    font-size: 1vw;
+    font-weight: 600;
+    line-height: 1.3vw;
+    text-align: center;
+    color: var(--color-basic);
+}
+
+.menu-button {
+    display: inline-block;
+    background-color: var(--color-basic);
+    border-radius: .625vw;
+    cursor: pointer;
+}
+
+.button__profile {
+    cursor: auto;
+    width: 4.8vw;
+    height: 2.4vw;
+    display: flex;
+    justify-content: center;
+}
+
+.menu-button+.menu-button {
+    margin-left: 1.1vw;
+}
+
+.button__link {
+    width: 7.3vw;
+    height: 1.9vw;
+    padding-top: .45vw;
+    font-family: Futura;
+    font-size: 1vw;
+    line-height: 1.3vw;
+    text-align: center;
+    color: var(--color-white);
+}
+
+.button__icons {
+    width: 2.4vw;
+    height: 2.4vw;
+}
+
+.button__profile:hover .menu-drop {
+    visibility: visible;
+    opacity: 1;
+}
+
+.menu-button .icon {
+    display: block;
+    width: 1.55vw;
+    height: 1.55vw;
+    margin: .4vw auto auto;
+}
+
+.menu-button .tick {
+    width: .8vw;
+    height: .45vw;
+    margin-top: 1vw;
+    margin-left: 0;
+}
+
+/*Выпадающее окно*/
+.menu-drop {
+    display: block;
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    top: 6vw;
+    right: 12.5vw;
+    width: 250px;
+    height: 350px;
+    background: var(--color-basic);
+    box-shadow: 0 10px 20px 0 #000;
+    border-radius: 0 0 12px 12px;
+    transition: .5s ease-in-out;
+}
+
+.drop__wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    height: calc(100%-64px);
+    margin: 32px 0;
+}
+
+.drop-account_info {
+    display: flex;
+    align-items: center;
+    padding-left: 21px;
+    height: 80px;
+}
+
+.drop-account_data {
+    padding-left: 18px;
+    display: flex;
+    flex-direction: column;
+}
+
+.drop-account_data .nickname {
+    margin-bottom: 15px;
+    font-family: Futura;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 1.3vw;
+    color: var(--color-white);
+}
+
+.drop-account_data .balance {
+    font-family: Tith;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 1.2vw;
+    color: var(--color-white);
+}
+
+.drop-account_icon {
+    width: 20px;
+    height: 20px;
+    padding-bottom: 5px;
+}
+
+.drop-statistics {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 102px;
+    padding: 0 24px;
+}
+
+.drop-stat {
+    display: flex;
+    flex-direction: column;
+    font-family: Futura;
+    font-size: 13px;
+    line-height: .8vw;
+    text-align: center;
+    color: var(--color-white);
+}
+
+.drop-stat__number {
+    font-family: Tith;
+    font-weight: 400;
+    font-size: 26px;
+    line-height: .9vw;
+    text-align: center;
+    color: var(--color-white);
+    margin-bottom: 11px;
+}
+
+.drop-button {
+    display: block;
+    height: 26px;
+    padding-top: 4px;
+    padding-left: 30px;
+    background-color: var(--color-basic);
+    font-family: Futura;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1vw;
+    color: var(--color-white);
+    text-align: left;
+}
+
+.drop-button:hover {
+    background-color: var(--color-hover);
+    transition: .2s;
+}
+
+.drop-button_icons {
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    margin-right: 8px;
+    text-align: center;
+}
+
+/*Выпадающее окно*/
+/*Заголовок*/
+/*Главная до авторизации*/
+.title__wrapper {
+    width: 75%;
+    padding-top: 9vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: auto;
+}
+
+.title__box {
+    max-width: 34vw;
+    display: flex;
+    flex-direction: column;
+}
+
+.title__box .title {
+    font-family: Tith;
+    font-weight: 400;
+    font-size: 5.3vw;
+    line-height: 3.75vw;
+    color: var(--color-basic);
+}
+
+.title__box .description {
+    margin-top: 1vw;
+    font-family: Futura;
+    font-weight: 400;
+    font-size: 1.6vw;
+    line-height: 2.1vw;
+}
+
+.mascot {
+    width: 26vw;
+    height: 26vw;
+}
+
+.button__registration {
+    margin-top: 2vw;
+    width: 24vw;
+    height: 3.4vw;
+    padding-top: 1.7vw;
+    font-family: Futura;
+    font-weight: 600;
+    font-size: 1.7vw;
+    line-height: 2.1vw;
+    text-align: center;
+    color: var(--color-white);
+}
+
+.blue__rectangle {
+    display: flex;
+    justify-content: space-around;
+    background-color: var(--color-basic);
+    margin-top: 9vw;
+    width: 100%;
+    height: 55vh;
+    padding: 2.6vw 0;
+}
+
+.white__square {
+    display: grid;
+    grid-template-rows: 1fr 3fr 1fr;
+    background-color: var(--color-white);
+    width: 22vw;
+    height: 20vw;
+    border-radius: .625vw;
+}
+
+.neheader__name {
+    font-family: Tith;
+    font-weight: 400;
+    font-size: 3.3vw;
+    line-height: 2.4vw;
+    text-align: center;
+    color: var(--color-basic);
+    margin: 2vw 0;
+}
+
+.neheader__text {
+    font-family: Futura;
+    font-weight: 400;
+    font-size: 1.25vw;
+    line-height: 1.6vw;
+    text-align: center;
+    padding: 0 1.3vw;
+}
+
+.neheader__logo {
+    display: block;
+    width: 4.4vw;
+    height: 4.4vw;
+    padding-bottom: .65vw;
+    margin: 0 auto;
+}
+
+.boy__with__money {
+    background-color: var(--color-white);
+    width: 50vw;
+    height: 40vw;
+    margin: 6vw auto;
+}
+
+.boy__with__money .title {
+    font-family: TitH;
+    font-weight: 400;
+    font-size: 5vw;
+    line-height: 3.6vw;
+    text-align: center;
+    color: var(--color-basic);
+    padding-top: 2vw;
+}
+
+.boy__money {
+    display: block;
+    width: 22vw;
+    margin: 3.75vw auto;
+}
+
+.boy__with__money .discription {
+    font-family: Futura;
+    font-weight: 400;
+    font-size: 1.8vw;
+    line-height: 2.4vw;
+    text-align: center;
+    color: var(--color-black);
+}
+
+.grey__rectangle {
+    display: flex;
+    justify-content: space-around;
+    background-color: var(--color-light-grey);
+    width: 100%;
+    height: 13vw;
+    padding: 5vw 0;
+}
+
+.footer__name,
+.footer__text {
+    font-family: Futura;
+    font-size: 1.25vw;
+}
+
+.footer__name {
+    font-weight: 600;
+    line-height: 1.6vw;
+}
+
+.footer__text {
+    margin-top: 1.25vw;
+    font-weight: 400;
+    line-height: 2.2vw;
+}
+
+.blue__grey__rectangle {
+    display: flex;
+    justify-content: space-around;
+    background-color: var(--color-blue-grey);
+    width: 100%;
+    height: 1.8vw;
+    padding-top: 1vw;
+}
+
+.blue__grey__rectangle__text {
+    font-family: Futura;
+    font-weight: 400;
+    font-size: .7vw;
+    line-height: .9vw;
+    text-align: center;
+}
+
+/*Главная до авторизации*/
+
+/*Главная после авторизации*/
+main {
+    width: 100%;
+    background-color: var(--color-ground);
+    box-shadow: inset 0 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.main_title {
+    font-family: Tith;
+    font-weight: 400;
+    font-size: 5vw;
+    line-height: 3.6vw;
+    text-align: center;
+    color: var(--color-basic);
+    padding: 2vw 0;
+}
+
+.title_catalog {
+    padding: 6vw 0;
+}
+
+.main__wrapper {
+    width: 75%;
+    display: flex;
+    justify-content: space-between;
+    margin: auto;
+}
+
+.wrap {
+    flex-wrap: wrap;
+}
+
+.main__one_page {
+    height: 100%;
+}
+
+.white_rectangle {
+    width: 24vw;
+    height: 35vw;
+    background: var(--color-white);
+    border-radius: .625vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-bottom: 6vw;
+    padding: 1.3vw 0;
+}
+
+.white_rectangle .title {
+    font-family: Futura;
+    font-weight: 600;
+    font-size: 1.8vw;
+    line-height: 2.3vw;
+    text-align: center;
+    color: var(--color-basic);
+}
+
+.button__rectangle {
+    width: 18.75vw;
+    height: 2.7vw;
+    padding-top: 1vw;
+    font-family: Futura;
+    font-weight: 450;
+    font-size: 1.25vw;
+    line-height: 1.6vw;
+    text-align: center;
+    color: var(--color-white);
+    margin: 0 auto;
+}
+
+.checkmark_info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 18.85vw;
+    height: 9vw;
+    background: var(--color-white);
+    border: 1px solid var(--color-basic);
+    text-align: center;
+    border-radius: .7vw;
+    font-family: Futura;
+    font-weight: 450;
+    font-size: 1.1vw;
+    line-height: 1.1vw;
+    margin: 0 auto;
+    padding: 1.2vw .9vw;
+}
+
+.white_rectangle .present {
+    width: 7.8vw;
+    height: 9vw;
+    transition: scale 1s, transform 1s ease-in-out;
+    margin: 0 auto;
+}
+
+.white_rectangle .present:hover {
+    scale: 1.1;
+}
+
+.top_player {
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr;
+    align-items: center;
+    padding: 0 2.6vw;
+}
+
+.top_player .top-nickname,
+.top_player .score {
+    font-family: Futura;
+    font-weight: 450;
+    font-size: 1.25vw;
+    line-height: 1.6vw;
+    color: var(--color-black);
+}
+
+.top_player .avatar,
+.small__grey__rectangle .avatar {
+    width: 2.9vw;
+    height: 2.9vw;
+}
+
+.top_player .nickname {
+    margin-left: 1vw;
+}
+
+.top_player .score {
+    text-align: right;
+}
+
+.games_square {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 2vw;
+}
+
+.games_square .game_image {
+    width: 7.8vw;
+    height: 7.8vw;
+    transition: scale .5s;
+    padding: 1vw;
+}
+
+.games_square .game_image:hover {
+    scale: 1.15;
+}
+
+/*Главная после авторизации*/
+
+/*Каталог игр сайта*/
+.gametitle {
+    flex: 25%;
+    display: flex;
+    flex-direction: column;
+    transition: .5s;
+    margin-bottom: 5vw;
+}
+
+.gametitle:hover {
+    scale: 1.2;
+}
+
+.namegame {
+    text-align: center;
+    font-family: Futura;
+    font-weight: 600;
+    font-size: 1.8vw;
+    color: var(--color-basic);
+    margin-top: 1vw;
+}
+
+.img-game {
+    width: 10vw;
+    height: 10vw;
+    margin: auto;
+}
+
+/*Каталог игр сайта*/
+
+/*Модальные окна*/
+.modal_window {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 100;
+    background-color: rgba(0, 0, 0, 0.35);
+}
+.registration_window, .confirmation_window, .thanksforpay_window {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background: var(--color-white);
+    border-radius: 1.4vw;
+    padding: 2vw 3.3vw 3.3vw;
+}
+
+.modal_window .registration_window {
+    width: 20vw;
+    height: 32vw;
+    margin: 7vw auto;
+}
+
+.modal_window .confirmation_window {
+    width: 30vw;
+    height: 15vw;
+    margin: 13vw auto;
+}
+
+.modal_window .thanksforpay_window {
+    width: 20vw;
+    height: 10vw;
+    margin: 17vw auto;
+}
+
+.button__thanksforpay {
+    width: 30%;
+    height: 14%;
+    padding-top: 5%;
+    padding-bottom: 4%;
+    font-family: Futura;
+    font-weight: 900;
+    line-height: 1vw;
+    text-align: center;
+    color: var(--color-white);
+    margin: 0 auto;
+    font-size: 1.5vw;
+}
+
+.button__confirmation {
+    display: grid;
+    justify-content: space-around;
+    width: 30%;
+    height: 100%;
+    padding-top: 5%;
+    font-family: Futura;
+    font-weight: 600;
+    line-height: 1vw;
+    text-align: center;
+    color: var(--color-white);
+    margin: 0 auto;
+    font-size: 1.5vw;
+}
+
+.button__location {
+    display: flex;
+    justify-content: space-around;
+}
+
+.title__confirmation__window {
+    font-family: 'Futura';
+    font-weight: 700;
+    font-size: 1.45vw;
+    line-height: 1.9vw;
+    text-align: center;
+    color: var(--color-basic);
+}
+
+.description__confirmation__window {
+    font-family: 'Futura';
+    font-weight: 400;
+    font-size: 1.4vw;
+    line-height: 1vw;
+    text-align: center;
+}
+
+.modal_window .large-size {
+    height: 78.4vw;
+    margin: 4.2vw auto;
+}
+
+.registration_window .title {
+    font-family: Tith;
+    font-weight: 400;
+    font-size: 5vw;
+    line-height: 3.6vw;
+    text-align: center;
+    color: var(--color-basic);
+    margin-bottom: auto;
+}
+
+.registration_window .mascot {
+    width: 33%;
+    height: 33%;
+    margin: auto;
+}
+
+.modal_input {
+    width: calc(100%-1.25vw);
+    height: 12.5%;
+    padding-left: 1.25vw;
+    background-color: #ECECEC;
+    border-radius: .9vw;
+    margin-bottom: .625vw;
+    font-family: Futura;
+    font-weight: 450;
+    font-size: 1.25vw;
+    line-height: 1.6vw;
+    color: var(--color-black);
+}
+
+.modal_input::placeholder {
+    color: #8D8D8D;
+}
+
+.support_flex {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 3vw;
+}
+
+.modal_support {
+    font-family: Futura;
+    font-weight: 600;
+    font-size: 1vw;
+    line-height: 1.35vw;
+    color: var(--color-black);
+    cursor: pointer;
+}
+
+.login_button,
+.reg_button {
+    width: 100%;
+    height: 10%;
+    padding-top: 2%;
+    font-family: Futura;
+    font-weight: 600;
+    line-height: 2.4vw;
+    text-align: center;
+    color: var(--color-white);
+    margin: 0 auto;
+}
+
+.login_button {
+    font-size: 1.8vw;
+}
+
+.reg_button {
+    font-size: 1.25vw;
+    margin-top: auto;
+}
+
+.error-message {
+    display: none;
+    background-color: #FE9D9D;
+    border-radius: .9vw;
+    margin-bottom: .625vw;
+    font-family: Futura;
+    font-weight: 450;
+    font-size: 1.25vw;
+    line-height: 1.6vw;
+    color: #A60000;
+    padding: .8vw 1.25vw;
+}
+
+/*Модальные окна*/
+
+/*Страница Аккаунта*/
+.account__wrapper {
+    width: 75%;
+    margin: 3.125vw auto;
+}
+
+.grey__rectangle__account {
+    display: flex;
+    justify-content: space-around;
+    height: 14vw;
+    border-radius: .625vw .625vw 0 0;
+    background-color: var(--color-blue-grey);
+    padding: 2.6vw;
+}
+
+.blue__rectangle__accountt {
+    background-color: var(--color-basic);
+    border-radius: 0 0 .625vw .625vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    padding: 2.6vw 4.6vw 5.2vw;
+}
+
+.account__right {
+    display: flex;
+    justify-content: end;
+    width: 100%;
+}
+
+.account-button {
+    background-color: var(--color-white);
+    border-radius: .625vw;
+    height: 3.6vw;
+}
+
+.button__settings {
+    margin-left: .9vw;
+    width: 3.9vw;
+}
+
+.settings__account {
+    display: block;
+    width: 70%;
+    height: 70%;
+    margin: 15% auto;
+}
+
+.button__coins {
+    display: flex;
+    width: 8.6vw;
+}
+
+.coins__txt {
+    font-family: TitH;
+    font-weight: 400;
+    font-size: 3.3vw;
+    line-height: 2.3vw;
+    color: var(--color-basic);
+    margin-left: .9vw;
+    margin-top: .7vw;
+}
+
+.coins {
+    display: block;
+    width: 2.6vw;
+    height: 2.6vw;
+    margin: auto;
+}
+
+.header__account__txt {
+    margin-left: 6.25vw;
+    font-family: TitH;
+    font-weight: 400;
+    font-size: 2.6vw;
+    line-height: 3.125vw;
+    text-align: center;
+    color: var(--color-white);
+}
+
+.nickname__account__txt {
+    font-family: Futura;
+    font-weight: 600;
+    font-size: 2.2vw;
+    color: var(--color-white);
+}
+
+.blue__rectangle__account {
+    width: 23.7vw;
+    height: 40vw;
+    background-color: var(--color-basic);
+    border-radius: .625vw;
+}
+
+.white__square__account {
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+    margin: auto;
+    width: 19.4vw;
+    height: 33.2vw;
+    border-radius: .625vw;
+    background-color: var(--color-white);
+}
+
+.white__square__account .player_rate {
+    margin: 0;
+    padding: 0 1.2vw;
+}
+
+.button__account__blue {
+    display: block;
+    padding-top: .625vw;
+    width: 12vw;
+    height: 2.7vw;
+    font-family: Futura;
+    font-weight: 600;
+    font-size: 1.1vw;
+    line-height: 2.1vw;
+    text-align: center;
+    color: var(--color-white);
+    margin: auto;
+}
+
+.account__title {
+    color: var(--color-white);
+    font-family: Futura;
+    font-weight: 450;
+    font-size: 1.65vw;
+    line-height: 2.1vw;
+    text-align: center;
+    padding: 1.3vw 0;
+}
+
+.description__account {
+    padding-top: 2.6vw;
+    font-family: Futura;
+    font-weight: 400;
+    font-size: 1.65vw;
+    line-height: 2.1vw;
+    text-align: center;
+    color: var(--color-black);
+}
+
+.account__logo {
+    display: block;
+    width: 6.65vw;
+    height: 6.65vw;
+    margin: 0 auto;
+}
+
+.blue__rectangle__account__footer {
+    background-color: var(--color-basic);
+    width: 100%;
+    border-radius: .625vw;
+    margin: 3.125vw auto;
+    padding: 1.55vw 0 3.125vw;
+}
+
+.shops__account {
+    font-family: Futura;
+    font-weight: 450;
+    font-size: 1.65vw;
+    line-height: 2.1vw;
+    margin-left: 2.1vw;
+    color: var(--color-white);
+    margin-bottom: 1.55vw;
+}
+
+.white__rectangle__account__footer {
+    width: 94%;
+    background-color: var(--color-white);
+    border-radius: .625vw;
+    margin: auto;
+    padding: 1.4vw 0 2vw;
+}
+
+.shops__account__text {
+    font-family: Futura;
+    font-weight: 450;
+    font-size: 1.65vw;
+    line-height: 2.1vw;
+    margin-left: 3%;
+    margin-top: 3.125vw;
+}
+
+.shops__account__text:first-child {
+    margin-top: 0;
+}
+
+.ground__rectangle {
+    overflow-x: auto;
+    display: flex;
+    align-items: center;
+    width: 86%;
+    height: 11.875vw;
+    background-color: var(--color-ground);
+    border-radius: .625vw;
+    margin: 0 auto;
+    padding: 0 4%;
+}
+
+.account__logo__footter {
+    width: 6.65vw;
+    height: 6.65vw;
+    margin-right: 2vw;
+}
+
+.not_pictures {
+    display: block;
+    font-family: Futura;
+    font-weight: 450;
+    font-size: 2.5vw;
+    line-height: 3.2vw;
+    margin: auto;
+}
+
+.avatars {
+    width: 6.65vw;
+    height: 6.65vw;
+    border: .3vw solid var(--color-basic);
+    border-radius: 50%;
+}
+
+.avatars+.avatars {
+    margin-left: 24px;
+}
+
+.player_statistic {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    margin-left: 1vw;
+    padding-bottom: .1vw;
+    border-bottom: .15vw solid var(--color-light-blue);
+    border-radius: .11vw;
+    width: 100%;
+}
+
+.small__grey__rectangle {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 17vw;
+    height: 4vw;
+    background-color: var(--color-light-blue);
+    border-radius: .625vw;
+    margin: auto;
+}
+
+/*Страница Аккаунта*/
+
+/*Магазин*/
+
+.blocks {
+    width: 75%;
+    height: 55%;
+    display: flex;
+    margin: 3vw auto;
+}
+
+.borderElement1 {
+    display: flex;
+    width: 22vw;
+    padding: 6vw 0;
+    height: 30vw;
+    background-color: var(--color-basic);
+    border-radius: 1.3vw 0 0 1.3vw;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.borderElement1 .title {
+    font-family: 'Futura';
+    font-weight: 600;
+    font-size: 2.2vw;
+    text-align: center;
+    color: var(--color-white);
+    margin-bottom: 4vw;
+}
+
+.borderElement1 .menu_section {
+    padding: 1% 12%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+}
+
+.borderElement1 .text {
+    font-family: 'Futura';
+    font-weight: 400;
+    font-size: 1.8vw;
+    text-align: center;
+    color: var(--color-white);
+
+}
+
+.borderElement1 .selected {
+    background-color: var(--color-hover);
+}
+
+.borderElement1 .selected .text {
+    scale: .95;
+    font-weight: 600;
+}
+
+.menu_section .shopicons {
+    width: 2.6vw;
+    height: 2.6vw;
+}
+
+.borderElement2 {
+    width: 60vw;
+    height: 42vw;
+    background-color: var(--color-white);
+    border-radius: 0px 1.3vw 1.3vw 0px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    overflow: auto;
+}
+
+.borderElement3 {
+    width: 60vw;
+    height: 36vw;
+    padding: 3vw 0;
+    background-color: var(--color-white);
+    border-radius: 0px 1.3vw 1.3vw 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: auto;
+}
+
+.borderElement3 .top_player {
+    margin: .75vw auto;
+    width: 80%;
+}
+
+.shopbottom {
+    padding: 1.6vw 0 0 1.6vw;
+}
+
+.shopbottom .disabled {
+    background-color: var(--color-light-grey);
+}
+
+.shopbottom .disabled:hover {
+    scale: 1;
+    cursor: default;
+}
+
+.shop {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+}
+
+
+.shopcatalog {
+    width: 9.2vw;
+    height: 9.2vw;
+    display: flex;
+    align-items: flex-start;
+    margin: 0.5vw 1vw 0.5vw 1vw;
+}
+
+.pricebutton {
+    width: 8.9vw;
+    height: 2.6vw;
+    background-color: var(--color-basic);
+    border-radius: 0.75vw;
+    font-family: 'TitH';
+    font-size: 1.8vw;
+    line-height: 1.3vw;
+    text-align: center;
+    color: var(--color-white);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin: 0.5vw 1vw 0.5vw 1vw;
+}
+
+.pricebutton .icon {
+    width: 1.2vw;
+    height: 1.2vw;
+    margin-left: 0.25vw;
+}
+
+.shopcatalog .img-game {
+    width: 6.9vw;
+    height: 6.9vw;
+    border: .25vw solid var(--color-basic);
+    border-radius: 50%;
+}
+
+.shopcatalog .img-game::before {
+    background-color: #8D8D8D;
+}
+
+/*Магазин*/
+
+/*страница настроек профиля*/
+
+.exit {
+    margin-top: 4vw;
+    font-family: 'Futura';
+    font-weight: 400;
+    font-size: 1.2vw;
+    text-align: center;
+    color: var(--color-white);
+    align-items: flex-start;
+}
+
+.exit_icon {
+    margin-top: 4vw;
+    width: 2vw;
+    height: 2vw;
+}
+
+.exit-button {
+    padding-left: 2vw;
+    background-color: var(--color-basic);
+    font-family: 'Futura';
+    font-weight: 400;
+    font-size: 1.2vw;
+    line-height: 15vw;
+    color: var(--color-white);
+}
+
+.exit-button_icons {
+    display: inline-block;
+    margin-right: 4vw;
+}
+
+/*страница настроек профиля*/
+
+/*Страница с игрой*/
+.main_block {
+    width: 75%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-radius: .625vw;
+    background-color: var(--color-basic);
+    margin: 4.3vw auto;
+}
+
+.namegame_rectangle {
+    display: flex;
+    width: 100%;
+    height: 25vw;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: var(--color-basic);
+    border-radius: .625vw;
+    margin: auto;
+}
+
+.line-chess {
+    display: flex;
+    width: 90%;
+    align-items: center;
+    justify-content: space-between;
+    padding: 4.3vw 5% 0;
+}
+
+.chess1 {
+    font-family: Futura;
+    font-weight: 600;
+    font-size: 3.5vw;
+    line-height: 2.4vw;
+    text-align: center;
+    color: var(--color-white);
+}
+
+.right_button-white {
+    background-color: var(--color-white);
+    width: 3.5vw;
+    height: 3.5vw;
+    margin-left: 1vw;
+    border-radius: .625vw;
+}
+
+.right_button-white .coin_image {
+    display: block;
+    width: 2.6vw;
+    height: 2.6vw;
+    margin: .45vw auto;
+}
+
+.right_button-white .back_image {
+    display: block;
+    height: 1.6vw;
+    margin: .95vw auto;
+}
+
+.botton-line-chess {
+    display: flex;
+    margin-top: 2%;
+    margin-bottom: 4.3vw;
+}
+
+.rook_img {
+    width: 14vw;
+    height: 14vw;
+    padding-left: 5%;
+}
+
+.functions {
+    display: flex;
+    margin: auto;
+    flex-direction: column;
+}
+
+.button_game {
+    color: var(--color-basic);
+    background-color: var(--color-white);
+    margin-left: 6.1%;
+    height: 1vw;
+    width: 17vw;
+    padding-top: .6vw;
+    padding-bottom: 1.1vw;
+    margin-bottom: .5vw;
+}
+
+.counter-chess {
+    display: flex;
+    justify-content: space-between;
+    margin: 3.5vw auto auto;
+}
+
+.counter {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+    padding-right: 4vw;
+    margin: auto;
+}
+
+.counter-p {
+    color: var(--color-white);
+    font-family: Tith;
+    font-size: 3vw;
+}
+
+.counter .text {
+    color: var(--color-white);
+    font-family: Futura;
+    font-size: 1.5vw;
+    padding-top: 1vw;
+}
+
+.rategame_rectangle {
+    width: 99%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: var(--color-white);
+    border-radius: .625vw;
+    margin: auto auto .4vw;
+}
+
+.title_rate {
+    font-family: Futura;
+    font-weight: 600;
+    font-size: 2vw;
+    line-height: 2.4vw;
+    text-align: center;
+    color: var(--color-basic);
+    padding-top: 1.5vw;
+    padding-bottom: 3vw;
+}
+
+.rate_white {
+    width: 75%;
+    margin: auto;
+}
+
+.player_rate {
+    margin-bottom: 1.1vw;
+    display: flex;
+}
+
+.player_stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    margin-left: 2vw;
+    padding-bottom: .5vw;
+    border-bottom: .2vw solid var(--color-light-blue);
+    border-radius: .11vw;
+    width: 100%;
+}
+
+.top_player .nick_rate {
+    margin-left: .5vw;
+}
+
+.nick_rate {
+    font-family: Futura;
+    font-weight: 400;
+    font-size: 1.5vw;
+    line-height: 1.6vw;
+    text-align: left;
+    color: var(--color-black);
+}
+
+.score_kda {
+    text-align: center;
+    font-family: Futura;
+    font-weight: 450;
+    font-size: 1.25vw;
+    line-height: 1.6vw;
+    color: var(--color-black);
+}
+
+.betting_menu {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.8vw 3.6vw;
+    margin: 4.5vw auto;
+    width: 60%;
+}
+
+.betting_menu select,
+.betting_menu input {
+    flex: 1 0 19vw;
+    height: 4vw;
+    background-color: var(--color-basic);
+    border-radius: .625vw;
+    color: var(--color-white);
+}
+
+.betting_menu select {
+    cursor: pointer;
+    padding-left: 0.7vw;
+    font-family: Futura;
+    font-weight: 600;
+    font-size: 1.5vw;
+    line-height: 2vw;
+}
+
+.betting_menu input {
+    flex: initial;
+    padding-left: 1vw;
+    padding-right: 1vw;
+    width: 18.25vw;
+}
+
+.betting_menu input::-webkit-input-placeholder {
+    color: var(--color-white);
+    opacity: 0.3
+}
+
+.text-summ-visible {
+    display: none;
+    position: absolute;
+    top: 79.6%;
+    left: 51.7%;
+    font-family: Futura;
+    font-weight: 600;
+    font-size: 1.5vw;
+    line-height: 2vw;
+    cursor: pointer;
+    text-align: left;
+    justify-content: center;
+    width: 19vw;
+    height: 3vw;
+    padding-top: 1.5vw;
+    padding-left: 1.2vw;
+    opacity: 0.3;
+    color: var(--color-white);
+}
+
+.text-summ-visible--invisible {
+    display: none;
+}
+
+.text-input {
+    font-family: Futura;
+    font-weight: 600;
+    font-size: 1.5vw;
+    line-height: 2vw;
+}
+
+.choose_game {
+    font-family: Futura;
+    font-weight: 600;
+    font-size: 1.5vw;
+    line-height: 2vw;
+    border-radius: .625vw;
+    padding: 2vw;
+}
+
+.betting_menu .menu-button {
+    flex: 1 0 38vw;
+    height: 3vw;
+    padding-top: 1vw;
+    font-family: Futura;
+    font-weight: 600;
+    font-size: 1.5vw;
+    line-height: 2vw;
+    text-align: center;
+    color: var(--color-white);
+    transition: .2s;
+}
+
+.betting_menu .menu-button:hover {
+    scale: .95;
+}
+
+/*Страница с игрой*/
+
+/*Повторяющиеся элементы*/
+#structure,
+.modal_window {
+    display: none;
+}
+
+.button__link:hover,
+.button__icons:hover,
+.button__rectangle:hover,
+.button__registration:hover,
+.right_button-white:hover,
+.button__settings:hover,
+.button__account__blue:hover,
+.pricebutton:hover,
+.button__confirmation:hover,
+.button__thanksforpay:hover {
+    scale: .95;
+    transition: .2s;
+    cursor: pointer;
+}
+
+.login_button:hover,
+.reg_button:hover {
+    background-color: var(--color-hover);
+    scale: .95;
+    transition: .2s;
+}
+
+.account__right__blue,
+.right_button {
+    display: flex;
+}

@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Аккаунт</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+    <script src="js/jquery-3.6.3.js"></script>
+    <script src="js/account.js"></script>
+</head>
+
+<body>
+    <div class="flex">
+
+        <header>
+            <div class="header__wrapper">
+                <a href="home.html" class="header__left">
+                    <img class="header__logo" src="img/LogoM.svg" alt="Logotype">
+                    <div class="header__name">Play Bet Wins</div>
+                </a>
+                <div class="header__center">
+                    <a href="game-catalog.html" class="menu-button button__link">Игры</a>
+                    <a href="store.html" class="menu-button button__link">Магазин</a>
+                    <a href="rates.html" class="menu-button button__link">Рейтинг</a>
+                </div>
+
+                <div id="header_login" class="header__right">
+                    <div class="menu-button button__icons">
+                        <img class="icon" src="img/icons/calendar-white.svg" alt="calendar">
+                    </div>
+
+                    <div class="menu-button button__profile">
+                        <img class="icon" src="img/icons/Avatars-1.svg" alt="Avatar">
+                        <img class="icon tick" src="img/icons/tick-down.svg" alt="Tick">
+                        <div class="menu-drop">
+
+                            <div class="drop__wrapper">
+                                <div class="drop-account_info">
+                                    <img width="80px" height="80px" src="img/icons/Avatars-1.svg" alt="Avatar">
+                                    <div class="drop-account_data">
+                                        <div class="nickname">Никнейм</div>
+                                        <div class="balance"><span>1000</span>
+                                            <img width="20px" height="20px" class="drop-account_icon"
+                                                src="img/icons/coins.svg" alt="Coins">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="drop-statistics">
+                                    <div class="drop-stat">
+                                        <div class="drop-stat__number">0</div>
+                                        Побед
+                                    </div>
+                                    <div class="drop-stat">
+                                        <div class="drop-stat__number">0</div>
+                                        Поражений
+                                    </div>
+                                    <div class="drop-stat">
+                                        <div class="drop-stat__number">0</div>
+                                        Ничьих
+                                    </div>
+                                </div>
+                                <a href="account.html" class="drop-button">
+                                    <div class="drop-button_icons">
+                                        <img width="24px" height="24px" src="img/icons/smile_square.svg"
+                                            alt="Profile icon">
+                                    </div>Профиль
+                                </a>
+                                <a href="settings.html" class="drop-button">
+                                    <div class="drop-button_icons">
+                                        <img width="24px" height="24px" src="img/icons/settings-white2.svg"
+                                            alt="Setting icon">
+                                    </div>Настройки профиля
+                                </a>
+                                <a href="scripts/logout.php" class="drop-button">
+                                    <div class="drop-button_icons">
+                                        <img width="20px" height="24px" src="img/icons/door.svg" alt="LogOut icon">
+                                    </div>Выйти из аккаунта
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </header>
+
+        <main>
+            <div class="account__wrapper">
+                <div class="grey__rectangle__account">
+                    <div class="account__right">
+                        <div class="account-button button__coins">
+                            <h3 class="coins__txt">1000</h3>
+                            <img class="coins" src="img/icons/coins-blue.svg" alt="coins">
+                        </div>
+                        <a href="settings.html" class="account-button button__settings">
+                            <img class="settings__account" src="img/icons/settings.svg" alt="Settings_account">
+                        </a>
+                    </div>
+                </div>
+                <div class="blue__rectangle__accountt">
+                    <h3 class="nickname__account__txt">Ник игрока</h3>
+                    <div class="account__right__blue">
+                        <h3 class="header__account__txt"><span>0</span> <br> Побед</h3>
+                        <h3 class="header__account__txt"><span>0</span> <br> Поражений</h3>
+                        <h3 class="header__account__txt"><span>0</span> <br> Ничьих</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="main__wrapper">
+                <div class="blue__rectangle__account">
+                    <p class="account__title">Место в ТОПе игроков</p>
+                    <div id="topMenu" class="white__square__account">
+                        <!-- Топ -->
+                        <a href="rates.html" class="menu-button button__account__blue">Перейти к рейтингу</a>
+                    </div>
+                </div>
+                <div class="blue__rectangle__account">
+                    <p class="account__title">Последние игры</p>
+                    <div id="gameMenu" class="white__square__account">
+                        <!-- Игры -->
+                        <a href="game-catalog.html" class="menu-button button__account__blue">Перейти к играм</a>
+                    </div>
+                </div>
+                <div class="blue__rectangle__account">
+                    <p class="account__title">Последние ставки</p>
+                    <div id="betsMenu" class="white__square__account">
+                        <!-- Ставки -->
+                        <a href="" class="menu-button button__account__blue">Перейти к ставкам</a>
+                    </div>
+                </div>
+
+            </div>
+            <div class="main__wrapper">
+                <div class="blue__rectangle__account__footer">
+                    <p class="shops__account">Покупки</p>
+                    <div class="white__rectangle__account__footer">
+                        <h3 class="shops__account__text">Аватарки</h3>
+                        <div id="avatarsMenu" class="ground__rectangle">
+                            <!-- Аватарки -->
+                        </div>
+
+                        <h3 class="shops__account__text">Эмодзи</h3>
+
+                        <div id="smilesMenu" class="ground__rectangle">
+                            
+                        </div>
+
+                        <h3 class="shops__account__text">Скины</h3>
+
+                        <div class="ground__rectangle">
+                            <div class="not_pictures">
+                                <img class="account__logo__footter" src="img/LogoM.svg" alt="logo">
+                                Нет в наличии
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </main>
+
+    </div>
+
+    <div id="structure">
+        <div class="top_player player_rate" name="top">
+            <img class="avatar" src="img/icons/Avatars.svg" alt="Player avatar">
+            <div class="player_statistic">
+                <h3 class="nickname nick_rate">Bibu</h3>
+                <h3 class="score kda">4000</h3>
+                <h3 class="score score_rate">#1</h3>
+            </div>
+        </div>
+
+        <div class="top_player player_rate" name="bets">
+            <img class="avatar" src="img/games/chess.svg" alt="Player avatar">
+            <div class="player_stats">
+                <h3 class="nickname nick_rate"></h3>
+                <h3></h3>
+                <h3 class="score score_rate"></h3>
+            </div>
+        </div>
+
+        <div class="small__grey__rectangle">
+            <img class="avatar" src="img/games/chess.svg" alt="Player avatar">
+            <h3 class="nickname nick_rate">Pepa</h3>
+            <h3 class="score nick_rate">WIN</h3>
+        </div>
+
+        <img class="avatars" src="" alt="">
+
+        <div class="not_pictures">
+            <img class="account__logo__footter" src="img/LogoM.svg" alt="logo">
+            Нет в наличии
+        </div>
+    </div>
+
+</body>
+
+</html>
