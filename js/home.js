@@ -64,7 +64,7 @@ $(function () {
             data = JSON.parse(data);
             for (let i = 0; i < data.length; i++) {
                 let lastGame = $("#structure .game_image").parent().clone();
-                $(lastGame).attr("href","game.html?" + data[i].Name);
+                $(lastGame).attr("href","gameinfo.html?" + data[i].Name);
                 $(lastGame).find("img").attr("src", `img/games/${data[i].Name}.svg`);
                 $(lastGame).find("img").attr("alt", `${data[i].Title} картинка`);
                 $(".games_square").append(lastGame);

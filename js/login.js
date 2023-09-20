@@ -63,6 +63,7 @@ $(function () {
             function (data) {
                 console.log(data);
                 if (data === "RegisterSuccess") {
+                    // TODO: Вывод модального окна об успешной регистрации 
                     //window.location.href = 'home.html';
                     alert("Круто");
                 } else {

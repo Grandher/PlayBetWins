@@ -18,10 +18,9 @@ $(function() {
     });
     $.post("scripts/getGames.php", {}, function (data) {
         data = JSON.parse(data);
-        console.log(data);
         for (let i = 0; i < data.length; i++) {
             let game = $("#structure .gametitle").clone();
-            $(game).attr("href","game.html?" + data[i].Name);
+            $(game).attr("href","gameinfo.html?" + data[i].Name);
             $(game).find(".namegame").text(data[i].Title);
 
             $(game).find(".img-game").attr("gameID", data[i].GameID);

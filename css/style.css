@@ -1553,6 +1553,7 @@ main {
 /*Страница с игрой*/
 
 /*Повторяющиеся элементы*/
+#header_login,
 #structure,
 .modal_window {
     display: none;
