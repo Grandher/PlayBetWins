@@ -7,6 +7,7 @@ $(function () {
 
     $.post("scripts/getHeaderInfo.php", {}, function (data) {
         data = JSON.parse(data);
+        console.log(data);
 
         $(".nickname").text(data.Login);
         $(".balance span").text(data.Balance);
@@ -52,7 +53,7 @@ $(function () {
         for (let i = 0; i < data.length; i++) {
             let topPlayer = $("#structure .top_player").clone();
             $(topPlayer).find(".top-nickname").text(data[i].Login);
-            $(topPlayer).find(".score").text(data[i].Score);
+            $(topPlayer).find(".score").text(Math.round(data[i].Score));
             $("#topList .menu-button").before(topPlayer);
         }
     });

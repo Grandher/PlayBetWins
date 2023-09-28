@@ -1,7 +1,7 @@
 <?php
     require "connect.php";
 
-    $query = $DBH->prepare("SELECT Login, SUM(ScoreElo) AS Score FROM Rating
+    $query = $DBH->prepare("SELECT Login, AVG(ScoreElo) AS Score FROM Rating
                             JOIN Account ON PlayerID = PeopleID
                             GROUP BY PlayerID ORDER BY Score DESC LIMIT 5");
     $query->execute();

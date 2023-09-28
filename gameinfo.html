@@ -110,9 +110,9 @@
                     <div class="botton-line-chess">
                         <img class="rook_img" src="img/games/chess-white.svg">
                         <div class="functions">
-                            <a href="" class="menu-button button__rectangle button_game">Начать онлайн</a>
-                            <a href="" class="menu-button button__rectangle button_game">Начать с другом</a>
-                            <a href="" class="menu-button button__rectangle button_game">Начать с NPS</a>
+                            <div class="menu-button button__rectangle button_game" id="startRandom">Играть онлайн</div>
+                            <div class="menu-button button__rectangle button_game">Играть с другом</div>
+                            <div class="menu-button button__rectangle button_game">Играть с NPS</div>
                         </div>
                         <div class="counter-chess">
                             <div class="counter">
@@ -188,13 +188,21 @@
         <div id="modal-success" class="modal_window">
             <div class="thanksforpay_window">
                 <h3 class="title__confirmation__window">Ставка внесена!</h3>
-                <div class="menu-button button__thanksforpay">Ok!</div>
+                <div class="menu-button button__thanksforpay">Ок</div>
             </div>
         </div>
         <div id="modal-error" class="modal_window">
             <div class="thanksforpay_window">
                 <h3 class="title__confirmation__window">Неверные данные!</h3>
-                <div class="menu-button button__thanksforpay">Ok!</div>
+                <div class="menu-button button__thanksforpay">Ок</div>
+            </div>
+        </div>
+        <!-- Модальное окно ожидания игры -->
+        <div id="modal-waiting" class="modal_window">
+            <div class="thanksforpay_window">
+                <h3 class="title__confirmation__window">Поиск соперника...</h3>
+                <h2 class="title__confirmation__window" id="timer">0:00</h2>
+                <div class="menu-button button__thanksforpay" id="modalCancel">Отмена</div>
             </div>
         </div>
 

@@ -1,5 +1,6 @@
 $(function () {
     let gameID = 0;
+    let TIMER;
 
     $.post("scripts/getHeaderInfo.php", {}, function (data) {
         if (data === "NotSession") {
@@ -63,6 +64,52 @@ $(function () {
 
     });
 
+    $("#startRandom").click(function () {
+        $.post("scripts/addMatching.php", { "game": gameID }, function (data) {
+            console.log(data);
+            data = parseInt(data);
+            switch (data) {
+                case 201:
+                    $("body").css("overflow", "hidden");
+                    $("#modal-waiting").fadeIn(400);
+                    $("#modal-waiting").css("top", $(document).scrollTop());
+                    let time = 1;
+                    TIMER = setInterval(function () {
+                        min = parseInt(time / 60, 10);
+                        sec = parseInt(time % 60, 10);
+                        min = min < 10 && min > 0 ? "0" + min : min;
+                        sec = sec < 10 ? "0" + sec : sec;
+                        $('#timer').text(min + ":" + sec);
+                        time++;
+
+                        $.post("scripts/checkMatching.php", { "game": gameID }, function (match) {
+                            match = parseInt(match);
+                            console.log(match);
+                            if (match == 200) {
+                                window.location.href = 'game.html';
+                            }
+                        });
+                    }, 1000);
+                    break;
+                case 208:
+                    window.location.href = 'game.html';
+                    break;
+                case 500:
+                    location.reload();
+                    break;
+                case 401:
+                    $('html, body').animate({ scrollTop: 0 }, 400);
+                    $("body").css("overflow", "hidden");
+                    $("#modal-login").fadeIn(400);
+                    break;
+                case 402:
+                    alert("Завершите все текущие игры");
+                    break;
+                default:
+                    console.log("error");
+            }
+        });
+    });
 
     $("#submitBets").click(function () {
         $("body").css("overflow", "hidden");
@@ -107,6 +154,14 @@ $(function () {
             $("body").css("overflow", "auto");
             $("#modal-error").fadeOut(400);
         }
+        if (e.target.id == "modal-waiting") {
+            clearInterval(TIMER);
+            $("body").css("overflow", "auto");
+            $("#modal-waiting").fadeOut(400);
+            $.post("scripts/removeMatching.php", {}, function (data) {
+                console.log(data);
+            });
+        }
     })
     $(".button__confirmation").click(function () {
         $("body").css("overflow", "auto");
@@ -115,5 +170,13 @@ $(function () {
     $(".button__thanksforpay").click(function () {
         $("body").css("overflow", "auto");
         $("#modal-success").fadeOut(400);
+    })
+    $("#modalCancel").click(function () {
+        clearInterval(TIMER);
+        $("body").css("overflow", "auto");
+        $("#modal-waiting").fadeOut(400);
+        $.post("scripts/removeMatching.php", {}, function (data) {
+            console.log(data);
+        });
     })
 })

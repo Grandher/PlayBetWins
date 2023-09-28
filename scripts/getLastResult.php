@@ -4,16 +4,18 @@
         $id = $_SESSION['id'];
         require "connect.php";
 
-        $query = $DBH->prepare("SELECT  Name, Login, Status FROM (
-                                    SELECT Name, Login, 'WIN' AS Status, Time FROM Match
-                                        JOIN Account ON PlayerID_2 = PeopleID
-                                        JOIN Games USING (GameID)
+        $query = $DBH->prepare("SELECT Login, Status, Name FROM (
+                                    SELECT PlayerID_2 AS PeopleID, 'WIN' AS Status, GameID, Time FROM Match
                                         WHERE PlayerID_1 = :id AND Status = 1
-                                    UNION SELECT Name, Login, 'LOS' AS Status, Time FROM Match
-                                        JOIN Account ON PlayerID_1 = PeopleID
-                                        JOIN Games USING (GameID)
+                                    UNION SELECT PlayerID_1 AS PeopleID, 'LOS' AS Status, GameID, Time FROM Match
                                         WHERE PlayerID_2 = :id AND Status = 1
-                                    ORDER BY Time DESC LIMIT 5)");
+                                    UNION SELECT PlayerID_2 AS PeopleID, 'DRAW' AS Status, GameID, Time FROM Match
+                                        WHERE PlayerID_1 = :id AND Status = 2
+                                    UNION SELECT PlayerID_1 AS PeopleID, 'DRAW' AS Status, GameID, Time FROM Match
+                                        WHERE PlayerID_2 = :id AND Status = 2
+                                    ORDER BY Time DESC LIMIT 5)
+                                JOIN Account USING (PeopleID)
+                                JOIN Games USING (GameID);");
         $query->bindParam("id", $id, PDO::PARAM_INT);
         $query->execute();
         $result = array();

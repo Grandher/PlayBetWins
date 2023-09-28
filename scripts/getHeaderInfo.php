@@ -15,7 +15,15 @@
                                 FROM Rating GROUP BY PlayerID HAVING PlayerID = :id");
         $query->bindParam("id", $id, PDO::PARAM_STR);
         $query->execute();
-        $result += $query->fetch(PDO::FETCH_ASSOC);
+        if ($rating = $query->fetch(PDO::FETCH_ASSOC)) {
+            $result += $rating;
+        } else {
+            $result += array(
+                "Wins" => 0,
+                "Losses" => 0,
+                "Draws" => 0
+            );
+        }
 
         echo json_encode($result);
     } else {

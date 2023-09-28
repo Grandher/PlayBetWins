@@ -6,7 +6,7 @@
     $result = array();
     if ($gameID == 0) {
         $query = $DBH->prepare("SELECT Login, AVG(ScoreElo) AS Score,
-                            Wins, Losses, Draws FROM Rating
+                            SUM(Wins) AS Wins, SUM(Losses) AS Losses, SUM(Draws) AS Draws FROM Rating
                             JOIN Account ON PlayerID = PeopleID
                             GROUP BY PlayerID ORDER BY Score DESC LIMIT 10");
         $query->execute();

@@ -667,7 +667,10 @@ main {
     z-index: 100;
     background-color: rgba(0, 0, 0, 0.35);
 }
-.registration_window, .confirmation_window, .thanksforpay_window {
+
+.registration_window,
+.confirmation_window,
+.thanksforpay_window {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -1275,7 +1278,7 @@ main {
 
 /*страница настроек профиля*/
 
-/*Страница с игрой*/
+/*Страница с инфой об игре*/
 .main_block {
     width: 75%;
     display: flex;
@@ -1548,6 +1551,128 @@ main {
 
 .betting_menu .menu-button:hover {
     scale: .95;
+}
+
+/*Страница с инфой об игре*/
+
+/*Страница с игрой*/
+
+.gameBackground {
+    width: 67%;
+    display: flex;
+    margin: 2vw auto;
+    border: .25vw var(--color-basic) solid;
+    border-radius: 1vw;
+}
+
+.gameMenu {
+    display: flex;
+    width: 22vw;
+    /*padding: 6vw 0;*/
+    height: 45vw;
+    background-color: var(--color-basic);
+    border-radius: .5vw 0 0 .5vw;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.gameMenu .menuBottom {
+    background-color: var(--color-white);
+    width: 99%;
+    height: 60%;
+    border-radius: 0 0 0 0.75vw;
+}
+
+.gameMenu .menuTop {
+    height: 40%;
+    display: flex;
+    padding: 9% 18%;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.menuTop .title {
+    font-family: 'Futura';
+    font-weight: 600;
+    font-size: 1.5vw;
+    text-align: center;
+    color: var(--color-white);
+}
+
+.versusInfo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.versusInfo .playerInfo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.versusInfo span {
+    color: var(--color-white);
+    font-family: 'Futura';
+    font-weight: 600;
+    text-align: center;
+    font-size: 1.5vw;
+    margin-bottom: 1.5vw;
+}
+
+.playerInfo img {
+    width: 5vw;
+    transition: border 0.4s, scale 0.4s;
+}
+.playerInfo .selected {
+    border: 0.3vw var(--color-light-blue) solid;
+    border-radius: 50%;
+    scale: .96;
+}
+
+.playerInfo .playerName {
+    color: var(--color-white);
+    font-family: 'Futura';
+    font-weight: 450;
+    text-align: center;
+    font-size: 1.25vw;
+    margin-top: 0.5vw;
+}
+
+.menuTop .stepTimer {
+    color: var(--color-white);
+    font-family: 'Futura';
+    font-weight: 450;
+    text-align: center;
+    font-size: 1.25vw;
+    margin-top: 0.5vw;
+}
+
+.leave-game {
+    height: 23%;
+    background-color: var(--color-white);
+    border-radius: 1vw;
+    font-family: 'Futura';
+    font-weight: 700;
+    font-size: 1.2vw;
+    line-height: 1.9vw;
+    text-align: center;
+    color: var(--color-basic);
+}
+
+.leave-game:active {
+    scale: .95;
+}
+
+.gameField {
+    width: 41vw;
+    height: 41vw;
+    padding: 2vw;
+    background-color: var(--color-white);
+    border-radius: 0px .75vw .75vw 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: auto;
 }
 
 /*Страница с игрой*/

@@ -29,7 +29,7 @@ $(function () {
             for (let i = 0; i < data.length; i++) {
                 let lastGame = $("#structure .player_rate[name='top']").clone();
                 $(lastGame).find(".nickname").text(data[i].Login);
-                $(lastGame).find(".kda").text(data[i].Score);
+                $(lastGame).find(".kda").text(Math.round(data[i].Score));
                 $(lastGame).find(".score_rate").text('#' + data[i].Rank);
 
                 /*$(lastGame).find(".avatar").attr("src", `img/games/${data[i].Name}.svg`);
