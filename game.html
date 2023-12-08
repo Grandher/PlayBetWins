@@ -14,132 +14,144 @@
 </head>
 
 <body>
-    <div class="flex">
-        <header>
-            <div class="header__wrapper">
-                <a href="home.html" class="header__left">
-                    <img class="header__logo" src="img/LogoM.svg" alt="Logotype">
-                    <div class="header__name">Play Bet Wins</div>
-                </a>
-                <div class="header__center">
-                    <a href="game-catalog.html" class="menu-button button__link">Игры</a>
-                    <a href="store.html" class="menu-button button__link">Магазин</a>
-                    <a href="rates.html" class="menu-button button__link">Рейтинг</a>
+<div class="flex">
+    <header>
+        <div class="header__wrapper">
+            <a href="home.html" class="header__left">
+                <img class="header__logo" src="img/LogoM.svg" alt="Logotype">
+                <div class="header__name">Play Bet Wins</div>
+            </a>
+            <div class="header__center">
+                <a href="game-catalog.html" class="menu-button button__link">Игры</a>
+                <a href="store.html" class="menu-button button__link">Магазин</a>
+                <a href="rates.html" class="menu-button button__link">Рейтинг</a>
+            </div>
+
+            <div id="header_login" class="header__right">
+                <div class="menu-button button__icons">
+                    <img class="icon" src="img/icons/calendar-white.svg" alt="calendar">
                 </div>
 
-                <div id="header_login" class="header__right">
-                    <div class="menu-button button__icons">
-                        <img class="icon" src="img/icons/calendar-white.svg" alt="calendar">
-                    </div>
+                <div class="menu-button button__profile">
+                    <img class="icon" src="img/icons/Avatars-1.svg" alt="Avatar">
+                    <img class="icon tick" src="img/icons/tick-down.svg" alt="Tick">
+                    <div class="menu-drop">
 
-                    <div class="menu-button button__profile">
-                        <img class="icon" src="img/icons/Avatars-1.svg" alt="Avatar">
-                        <img class="icon tick" src="img/icons/tick-down.svg" alt="Tick">
-                        <div class="menu-drop">
-
-                            <div class="drop__wrapper">
-                                <div class="drop-account_info">
-                                    <img width="80px" height="80px" src="img/icons/Avatars-1.svg" alt="Avatar">
-                                    <div class="drop-account_data">
-                                        <div class="nickname">Никнейм</div>
-                                        <div class="balance"><span></span>
-                                            <img width="20px" height="20px" class="drop-account_icon"
-                                                src="img/icons/coins.svg" alt="Coins">
-                                        </div>
+                        <div class="drop__wrapper">
+                            <div class="drop-account_info">
+                                <img width="80px" height="80px" src="img/icons/Avatars-1.svg" alt="Avatar">
+                                <div class="drop-account_data">
+                                    <div class="nickname">Никнейм</div>
+                                    <div class="balance"><span></span>
+                                        <img width="20px" height="20px" class="drop-account_icon"
+                                             src="img/icons/coins.svg" alt="Coins">
                                     </div>
                                 </div>
-                                <div class="drop-statistics">
-                                    <div class="drop-stat">
-                                        <div class="drop-stat__number">0</div>
-                                        Побед
-                                    </div>
-                                    <div class="drop-stat">
-                                        <div class="drop-stat__number">0</div>
-                                        Поражений
-                                    </div>
-                                    <div class="drop-stat">
-                                        <div class="drop-stat__number">0</div>
-                                        Ничьих
-                                    </div>
+                            </div>
+                            <div class="drop-statistics">
+                                <div class="drop-stat">
+                                    <div class="drop-stat__number">0</div>
+                                    Побед
                                 </div>
-                                <a href="account.html" class="drop-button">
-                                    <div class="drop-button_icons">
-                                        <img width="24px" height="24px" src="img/icons/smile_square.svg"
-                                            alt="Profile icon">
-                                    </div>Профиль
-                                </a>
-                                <a href="settings.html" class="drop-button">
-                                    <div class="drop-button_icons">
-                                        <img width="24px" height="24px" src="img/icons/settings-white2.svg"
-                                            alt="Setting icon">
-                                    </div>Настройки профиля
-                                </a>
-                                <a href="scripts/logout.php" class="drop-button">
-                                    <div class="drop-button_icons">
-                                        <img width="20px" height="24px" src="img/icons/door.svg" alt="LogOut icon">
-                                    </div>Выйти из аккаунта
-                                </a>
+                                <div class="drop-stat">
+                                    <div class="drop-stat__number">0</div>
+                                    Поражений
+                                </div>
+                                <div class="drop-stat">
+                                    <div class="drop-stat__number">0</div>
+                                    Ничьих
+                                </div>
                             </div>
+                            <a href="account.html" class="drop-button">
+                                <div class="drop-button_icons">
+                                    <img width="24px" height="24px" src="img/icons/smile_square.svg"
+                                         alt="Profile icon">
+                                </div>
+                                Профиль
+                            </a>
+                            <a href="settings.html" class="drop-button">
+                                <div class="drop-button_icons">
+                                    <img width="24px" height="24px" src="img/icons/settings-white2.svg"
+                                         alt="Setting icon">
+                                </div>
+                                Настройки профиля
+                            </a>
+                            <a href="scripts/logout.php" class="drop-button">
+                                <div class="drop-button_icons">
+                                    <img width="20px" height="24px" src="img/icons/door.svg" alt="LogOut icon">
+                                </div>
+                                Выйти из аккаунта
+                            </a>
                         </div>
                     </div>
-
                 </div>
-            </div>
-        </header>
 
-        <main>
-            <div class="gameBackground">
-                <div class="gameMenu">
-                    <div class="menuTop">
-                        <div class="title">ИНФОРМАЦИЯ</div> 
-                        <div class="versusInfo">
-                            <div class="playerInfo">
-                                <img src="/img/icons/Avatars-1.svg" alt="user avatar">
-                                <div class="playerName">Никнейм</div>
-                            </div>
-                            <span>X</span>
-                            <div class="playerInfo">
-                                <img src="/img/icons/Avatars-1.svg" alt="user avatar">
-                                <div class="playerName">Никнейм</div>
-                            </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="gameBackground">
+            <div class="gameMenu">
+                <div class="menuTop">
+                    <div class="title">ИНФОРМАЦИЯ</div>
+                    <div class="versusInfo">
+                        <div class="playerInfo">
+                            <img src="/img/icons/Avatars-1.svg" alt="user avatar">
+                            <div class="playerName">Никнейм</div>
                         </div>
-                        <div class="stepTimer">До конца хода: <span>1:00</span></div>
-                        <button class="leave-game">Покинуть игру</button>
+                        <span>X</span>
+                        <div class="playerInfo">
+                            <img src="/img/icons/Avatars-1.svg" alt="user avatar">
+                            <div class="playerName">Никнейм</div>
+                        </div>
                     </div>
-                    <div class="menuBottom">
-
-                    </div>
-                                   
+                    <div class="stepTimer">До конца хода: <span>1:00</span></div>
+                    <button class="leave-game">Покинуть игру</button>
                 </div>
-                <div class="gameField">
-                    <canvas id="respondCanvas" width="1000" height="1000" style="cursor: pointer;">
+                <div class="menuBottom">
+
+                </div>
+
+            </div>
+            <div class="gameField">
+                <div  class="box" style="margin: auto">
+                <div>
+                    <div id="projection" class="text-center"></div>
+                    <canvas id="respondCanvas" width="1000" height="1000" style="cursor: pointer;"></canvas>
+                </div>
+                <div class="game_padding">
+                    <div id="field" class="text-center"></div>
+                    <canvas id="respondCanvas2" width="1000" height="1000" style="cursor: pointer;display: none"></canvas>
                 </div>
             </div>
-        </main>
-
-        <!-- Модальное окно подтверждения -->
-        <div id="modal-conf" class="modal_window">
-            <div class="confirmation_window">
-                <h3 class="title__confirmation__window">Вы действительно хотите<br> покинуть игру?</h3>
-                <h3 class="description__confirmation__window">Вам будет засчитано поражение</h3>
-                <div class="button__location">
-                    <div id="buttonLeave" class="menu-button button__confirmation">Да</div>
-                    <div class="menu-button button__confirmation">Нет</div>
-                </div>
             </div>
         </div>
-        <!-- Модальное окно "Спасибо" -->
-        <div id="modal-success" class="modal_window">
-            <div class="thanksforpay_window">
-                <h3 class="title__confirmation__window"></h3>
-                <div class="menu-button button__thanksforpay">Ок</div>
+    </main>
+
+    <!-- Модальное окно подтверждения -->
+    <div id="modal-conf" class="modal_window">
+        <div class="confirmation_window">
+            <h3 class="title__confirmation__window">Вы действительно хотите<br> покинуть игру?</h3>
+            <h3 class="description__confirmation__window">Вам будет засчитано поражение</h3>
+            <div class="button__location">
+                <div id="buttonLeave" class="menu-button button__confirmation">Да</div>
+                <div class="menu-button button__confirmation">Нет</div>
             </div>
         </div>
-    
     </div>
-    <div id="structure">
+    <!-- Модальное окно "Спасибо" -->
+    <div id="modal-success" class="modal_window">
+        <div class="thanksforpay_window">
+            <h3 class="title__confirmation__window"></h3>
+            <div class="menu-button button__thanksforpay">Ок</div>
+        </div>
+    </div>
 
-    </div>
+</div>
+<div id="structure">
+
+</div>
 </body>
 
 </html>

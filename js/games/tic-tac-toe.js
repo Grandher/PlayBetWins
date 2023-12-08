@@ -79,7 +79,7 @@ $(function () {
     function drawGameBoard() {
         clearCanvas();
         drawBoard();
-
+        console.log(boardState);
         // Отрисовка крестиков и ноликов на доске
         for (let i = 0; i < boardState.length; i++) {
             const symbol = boardState[i];
