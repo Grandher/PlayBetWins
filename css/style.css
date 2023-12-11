@@ -670,7 +670,8 @@ main {
 
 .registration_window,
 .confirmation_window,
-.thanksforpay_window {
+.thanksforpay_window,
+.succesregistration_window{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -697,7 +698,27 @@ main {
     margin: 17vw auto;
 }
 
+.modal_window .succesregistration_window {
+    width: 20vw;
+    height: 10vw;
+    margin: 17vw auto;
+}
+
 .button__thanksforpay {
+    width: 30%;
+    height: 14%;
+    padding-top: 5%;
+    padding-bottom: 4%;
+    font-family: Futura;
+    font-weight: 900;
+    line-height: 1vw;
+    text-align: center;
+    color: var(--color-white);
+    margin: 0 auto;
+    font-size: 1.5vw;
+}
+
+.button__succesregistration {
     width: 30%;
     height: 14%;
     padding-top: 5%;
@@ -1464,6 +1485,11 @@ main {
     gap: 1.8vw 3.6vw;
     margin: 4.5vw auto;
     width: 60%;
+}
+
+.in_rating {
+    margin: 1vw auto;
+    width: 81%;
 }
 
 .betting_menu select,

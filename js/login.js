@@ -63,9 +63,13 @@ $(function () {
             function (data) {
                 console.log(data);
                 if (data === "RegisterSuccess") {
-                    // TODO: Вывод модального окна об успешной регистрации 
-                    //window.location.href = 'home.html';
-                    alert("Круто");
+                    $("#modal-register").fadeOut(400);
+                    $("#modal-successreg").fadeIn(400);
+                    $("body").on('click', '.button__succesregistration', function() {
+                        window.location.href = 'home.html';
+                      
+                     });
+                    //alert("Круто");
                 } else {
                     $("#modal-register .error-message").text(data);
                     $("#modal-register .error-message").fadeIn();

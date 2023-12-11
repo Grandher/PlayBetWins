@@ -11,6 +11,15 @@ $(function () {
         $("body").css("overflow", "hidden");
         $("#modal-register").fadeIn(400);
     })
+
+    //Открытие окна об успешной регистрации
+    $(".reg_button").click(function () {
+        $('html, body').animate({ scrollTop: 0 }, 400);
+        $("body").css("overflow", "hidden");
+        $("#modal-success").fadeIn(400);
+    })
+
+
     //Закрытие модальных окон
     $(document).click(function (e) {
         if (e.target.id == "modal-login") {
@@ -22,6 +31,12 @@ $(function () {
             $("body").css("overflow", "auto");
             $("#modal-register").fadeOut(400);
         }
+
+        if (e.target.id == "modal-succes") {
+            $("body").css("overflow", "auto");
+            $("#modal-success").fadeOut(400);
+        }
+
     })
 
     $("#modal-login .support_flex .modal_support").last().click(function () {
@@ -69,8 +84,14 @@ $(function () {
             function (data) {
                 console.log(data);
                 if (data === "RegisterSuccess") {
-                    //window.location.href = 'home.html';
-                    alert("Круто");
+                    
+                    $("#modal-register").fadeOut(400);
+                    $("#modal-successreg").fadeIn(400);
+                    $("body").on('click', '.button__succesregistration', function() {
+                        window.location.href = 'home.html';
+                      
+                     });
+                    
                 } else {
                     $("#modal-register .error-message").text(data);
                     $("#modal-register .error-message").fadeIn();

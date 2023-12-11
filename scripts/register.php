@@ -23,6 +23,8 @@
 
             try {
                 $result = $query->execute();
+                session_start();
+                $_SESSION['id'] = $DBH->lastInsertId();
                 echo 'RegisterSuccess';
             } catch (PDOException $e) {
                 echo 'Неверные данные';
