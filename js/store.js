@@ -23,11 +23,20 @@ $(function () {
     });
 
     $(".pricebutton").click(function () {
-        if (isLogin && !$(this).hasClass("disabled")) {
+        let balance = parseInt($(".balance span").text());
+        let cost = parseInt($(this).find(".text").text())
+        if (!isLogin) {
+            $('html, body').animate({ scrollTop: 0 }, 400);
+            $("body").css("overflow", "hidden");
+            $("#modal-login").fadeIn(400);
+        } else if (!$(this).hasClass("disabled") && balance - cost > 0) {
             thisButton = $(this);
             $("body").css("overflow", "hidden");
             $("#modal-conf").fadeIn(400);
             $("#modal-conf").css("top", $(document).scrollTop());
+        } else {
+            $("#modal-error").fadeIn(400);
+            $("#modal-error").css("top", $(document).scrollTop());
         }
     });
 
@@ -40,6 +49,15 @@ $(function () {
             $("body").css("overflow", "auto");
             $("#modal-success").fadeOut(400);
         }
+        if (e.target.id == "modal-error") {
+            $("body").css("overflow", "auto");
+            $("#modal-error").fadeOut(400);
+        }
+    })
+
+    $("#modal-error .menu-button").click(function () {
+        $("body").css("overflow", "auto");
+        $("#modal-error").fadeOut(400);
     })
 
     $("#buttonPay").click(function () {

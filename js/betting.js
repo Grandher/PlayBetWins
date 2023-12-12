@@ -57,6 +57,11 @@ $(function () {
         }
     })
 
+    $("#modal-error .menu-button").click(function () {
+        $("body").css("overflow", "auto");
+        $("#modal-error").fadeOut(400);
+    })
+
     $(document).click(function (e) {
         if (e.target.id == "modal-conf") {
             $("body").css("overflow", "auto");

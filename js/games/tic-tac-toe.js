@@ -35,7 +35,6 @@ $(function () {
         "playerTwo": Enemy
     }, function (data) {
         data = JSON.parse(data);
-        console.log(data);
 
         boardState = data.Field;
         whoCross = data.whoCross;
@@ -187,15 +186,13 @@ $(function () {
 
     function endGame(Winner, Losser, isDraw = false) {
         clearInterval(TIMER);
-        console.log({ "Победитель": Winner, "Проигравший": Losser });
         $.post("scripts/leaveGame.php", {
             'MatchID': matchID,
             'GameID': window.gameData.GameID,
             'Winner': Winner,
             'Losser': Losser,
             'isDraw': isDraw
-        }, function (data) {
-            //console.log(data);
+        }, function () {
             if (isDraw) {
                 $("#modal-success").find("h3").text("Ничья");
             } else
@@ -251,7 +248,6 @@ $(function () {
             data = JSON.parse(data);
 
             if (data.Status == 1) {
-                console.log(data);
                 endGame(data.PlayerID_1, data.PlayerID_2, false);
             }
             else {

@@ -66,7 +66,6 @@ $(function () {
 
     $("#startRandom").click(function () {
         $.post("scripts/addMatching.php", { "game": gameID }, function (data) {
-            console.log(data);
             data = parseInt(data);
             switch (data) {
                 case 201:
@@ -84,7 +83,6 @@ $(function () {
 
                         $.post("scripts/checkMatching.php", { "game": gameID }, function (match) {
                             match = parseInt(match);
-                            console.log(match);
                             if (match == 200) {
                                 window.location.href = 'game.html';
                             }

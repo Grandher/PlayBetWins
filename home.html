@@ -28,7 +28,7 @@
                 </div>
 
                 <div id="header_login" class="header__right">
-                    <div class="menu-button button__icons">
+                    <div class="menu-button button__icons calendar">
                         <img class="icon" src="img/icons/calendar-white.svg" alt="calendar">
                     </div>
 
@@ -96,9 +96,9 @@
                         <span>Регулярно заходите на наш сайт и получайте бонусы в виде монет!</span>
                         <span>Следующая возможность получить награду уже <span id="checkmark_time">00:00</span></span>
                         <span>Обязательно заглядывайте в календарь отметок и забирайте бонусы!</span>
-                        </p>
+                    </p>
                     <img class="present" src="img/present-blue.svg" alt="Reward icon">
-                    <a href="" class="menu-button button__rectangle">Перейти к отметкам</a>
+                    <a class="menu-button button__rectangle calendar">Перейти к отметкам</a>
                     <!--
                         TODO: Сверстать окно с монетками (инфа о наградах берётся из бд)
                               Если время отметки подошло, то по нажатию на горящие(активные) монетки выдаётся награда, в базе обновляется инфа о дне и дате ласт отметки
@@ -119,6 +119,78 @@
             </div>
 
         </main>
+    </div>
+
+    <div id="modal-calendar" class="modal_window">
+        <div class="calendar_window">
+            <h3 class="title__calendar">Календарь отметок</h3>
+            <div class="button_wrap">
+                <div class="calendar_money_button">
+                    <div class="button_with_day">
+                        <div class="calendar_button">
+                            <img src="img/money_gold.png" alt="Money_Gold" class="img_money">
+                            <p class="flex-item">+100</p>
+                        </div>
+                        <p class="button_with_day_text">1 день</p>
+                    </div>
+                    <div class="button_with_day">
+                        <div class="calendar_button">
+                            <img src="img/money_gold.png" alt="Money_Gold" class="img_money">
+                            <p class="flex-item">+100</p>
+                        </div>
+                        <p class="button_with_day_text">2 день</p>
+                    </div>
+                    <div class="button_with_day">
+                        <div class="calendar_button">
+                            <img src="img/money_gold.png" alt="Money_Gold" class="img_money">
+                            <p class="flex-item">+100</p>
+                        </div>
+                        <p class="button_with_day_text">3 день</p>
+                    </div>
+                    <div class="button_with_day">
+                        <div class="calendar_button">
+                            <img src="img/money_gold.png" alt="Money_Gold" class="img_money">
+                            <p class="flex-item">+100</p>
+                        </div>
+                        <p class="button_with_day_text">4 день</p>
+                    </div>
+                    <div class="calendar_money_button_two">
+                        <div class="button_with_day">
+                            <div class="calendar_button">
+                                <img src="img/money_gold.png" alt="Money_Gold" class="img_money">
+                                <p class="flex-item">+300</p>
+                            </div>
+                            <p class="button_with_day_text">5 день</p>
+                        </div>
+                        <div class="button_with_day">
+                            <div class="calendar_button">
+                                <img src="img/money_gold.png" alt="Money_Gold" class="img_money">
+                                <p class="flex-item">+350</p>
+                            </div>
+                            <p class="button_with_day_text">6 день</p>
+                        </div>
+                        <div class="button_with_day">
+                            <div class="calendar_button">
+                                <img src="img/money_gold.png" alt="Money_Gold" class="img_money">
+                                <p class="flex-item">+400</p>
+                            </div>
+                            <p class="button_with_day_text">7 день</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-checkmark" class="modal_window">
+        <div class="calendar_window_prize">
+            <h3 class="title__calendar_prize">Сегодня вы получили</h3>
+            <div class="calendar_prize">
+                <img src="img/money_gold.png" alt="Money_Gold" class="img_money_prize">
+                <p class="flex-item-prize">+100</p>
+                <a href="" class="prize_button">Спасибо!</a>
+            </div>
+        </div>
     </div>
 
     <div id="structure">

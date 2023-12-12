@@ -56,7 +56,6 @@ $(function () {
             $("#modal-login .error-message").fadeIn();
         } else {
             $.post("scripts/login.php", { "username": username, "password": password }, function (data) {
-                console.log(data);
                 if (data === "SessionStart") {
                     window.location.href = 'home.html';
                 } else {
@@ -82,7 +81,6 @@ $(function () {
                                              "password": password,
                                              "password-repeat": passwordRepeat },
             function (data) {
-                console.log(data);
                 if (data === "RegisterSuccess") {
                     
                     $("#modal-register").fadeOut(400);
