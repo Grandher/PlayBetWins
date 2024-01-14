@@ -8,6 +8,10 @@ $(function () {
             $(".header__left").attr("href", "index.html");
         } else {
             data = JSON.parse(data);
+            if (data.Avatar) {
+                $("img[alt='Avatar']").attr("src", `img/store/avatars/${data.Name}.svg`);
+                CURRENT_AVATAR = data.Avatar;
+            }
             $(".nickname").text(data.Login);
             $(".balance span").text(data.Balance);
             let statistic = [data.Wins, data.Losses, data.Draws];
@@ -54,6 +58,10 @@ $(function () {
             $(topPlayer).find(".nick_rate").text(data.topPlayer[i].Login);
             $(topPlayer).find(".score_kda").text(data.topPlayer[i].Wins + '/' + data.topPlayer[i].Losses + '/' + data.topPlayer[i].Draws);
             $(topPlayer).find(".score").text(data.topPlayer[i].ScoreElo);
+
+            if (data.topPlayer[i].Name) {
+                $(topPlayer).find(".avatar").attr("src", `img/store/avatars/${data.topPlayer[i].Name}.svg`);
+            }
 
             $(".rate_white").append(topPlayer);
 

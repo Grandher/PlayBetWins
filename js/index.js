@@ -32,7 +32,7 @@ $(function () {
             $("#modal-register").fadeOut(400);
         }
 
-        if (e.target.id == "modal-succes") {
+        if (e.target.id == "modal-success") {
             $("body").css("overflow", "auto");
             $("#modal-success").fadeOut(400);
         }

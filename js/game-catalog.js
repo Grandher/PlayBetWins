@@ -4,6 +4,10 @@ $(function() {
             $(".header__left").attr("href","index.html");
         } else {
             data = JSON.parse(data);
+            if (data.Avatar) {
+                $("img[alt='Avatar']").attr("src", `img/store/avatars/${data.Name}.svg`);
+                CURRENT_AVATAR = data.Avatar;
+            }
             $(".nickname").text(data.Login);
             $(".balance span").text(data.Balance);
             let statistic = [data.Wins, data.Losses, data.Draws];

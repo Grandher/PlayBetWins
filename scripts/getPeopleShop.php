@@ -4,7 +4,7 @@
         $id = $_SESSION['id'];
         require "connect.php";
 
-        $query = $DBH->prepare("SELECT Type, Name FROM ProductAccount
+        $query = $DBH->prepare("SELECT Type, Name, ProductID FROM ProductAccount
                                 JOIN Store USING (ProductID)
                                 WHERE PeopleID = :id");
         $query->bindParam("id", $id, PDO::PARAM_INT);

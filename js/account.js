@@ -3,6 +3,11 @@ $(function () {
 
         data = JSON.parse(data);
 
+        if (data.Avatar) {
+            $("img[alt='Avatar']").attr("src", `img/store/avatars/${data.Name}.svg`);
+            CURRENT_AVATAR = data.Avatar;
+        }
+
         $(".nickname").text(data.Login);
         $(".nickname__account__txt").text(data.Login);
         $(".balance span").text(data.Balance);
@@ -31,9 +36,9 @@ $(function () {
                 $(lastGame).find(".nickname").text(data[i].Login);
                 $(lastGame).find(".kda").text(Math.round(data[i].Score));
                 $(lastGame).find(".score_rate").text('#' + data[i].Rank);
-
-                /*$(lastGame).find(".avatar").attr("src", `img/games/${data[i].Name}.svg`);
-                $(lastGame).find(".avatar").attr("alt", `${data[i].Name} image`);*/
+                if (data[i].Name) {
+                    $(lastGame).find(".avatar").attr("src", `img/store/avatars/${data[i].Name}.svg`);
+                }
                 $("#topMenu .menu-button").before(lastGame);
             }
             for (let i = 0; i < 5 - data.length; i++) {

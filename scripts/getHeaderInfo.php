@@ -4,9 +4,10 @@ if (isset($_SESSION['id'])) {
     require "connect.php";
     $id = $_SESSION['id'];
 
-    $query = $DBH->prepare("SELECT Login, Balance, Avatar, Reward, CheckmarkDate FROM Account
-                                JOIN Checkmark ON CheckmarkDay = NumberDay
-                                WHERE PeopleID=:id");
+    $query = $DBH->prepare("SELECT Login, Balance, Name, Avatar, Reward, CheckmarkDate FROM Account
+                            JOIN Checkmark ON CheckmarkDay = NumberDay
+                            LEFT JOIN Store ON Avatar = ProductID
+                            WHERE PeopleID=:id");
     $query->bindParam("id", $id, PDO::PARAM_STR);
     $query->execute();
     $result = $query->fetch(PDO::FETCH_ASSOC);

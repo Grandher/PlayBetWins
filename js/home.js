@@ -11,6 +11,11 @@ $(function () {
         data = JSON.parse(data);
         Reward = data.Reward;
 
+        if (data.Avatar) {
+            $("img[alt='Avatar']").attr("src", `img/store/avatars/${data.Name}.svg`);
+            CURRENT_AVATAR = data.Avatar;
+        }
+
         $(".flex-item-prize").text(Reward);
         $(".nickname").text(data.Login);
         $(".balance span").text(data.Balance);
@@ -67,7 +72,11 @@ $(function () {
             let topPlayer = $("#structure .top_player").clone();
             $(topPlayer).find(".top-nickname").text(data[i].Login);
             $(topPlayer).find(".score").text(Math.round(data[i].Score));
+            if (data[i].Name) {
+                $(topPlayer).find(".avatar").attr("src", `img/store/avatars/${data[i].Name}.svg`);
+            }
             $("#topList .menu-button").before(topPlayer);
+
         }
     });
 

@@ -26,7 +26,7 @@
             <div class="header__wrapper">
                 <a href="home.html" class="header__left">
                     <img class="header__logo" src="img/LogoM.svg" alt="Logotype">
-                    <div class="header__name">Название сайта</div>
+                    <div class="header__name">Play Bet Wins</div>
                 </a>
                 <div class="header__center">
                     <a href="game-catalog.html" class="menu-button button__link">Игры</a>
@@ -97,31 +97,60 @@
             <div class="blocks">
                 <div class="borderElement1">
                     <div class="title">НАСТРОЙКИ</div>
-                    <div class="menu_section">
+                    <div class="menu_section selected" name="password">
                         <img class="shopicons" src="img/icons/user.svg" alt="user icon">
-                        <div class="text"> Аватарка </div>
+                        <div class="text"> Данные </div>
                     </div>
-                    <div class="menu_section">
-                        <img class="shopicons" src="img/icons/icon_cover.svg" alt="user icon">
-                        <div class="text selected"> Обложка</div>
+                    <div class="menu_section" name="avatars">
+                        <img class="shopicons" src="img/icons/icon_cover.svg" alt="cover icon">
+                        <div class="text"> Аватар</div>
                     </div>
-                    <div class="menu_section">
-                        <img class="shopicons" src="img/icons/palette_icon.svg" alt="user icon">
-                        <div class="text"> Тема (soon) </div>
+                    <div class="menu_section" name="theme">
+                        <img class="shopicons" src="img/icons/palette_icon.svg" alt="palette icon">
+                        <div class="text"> Тема </div>
                     </div>
-                    <a href="scripts/logout.php" class="exit-button">
-                        <div class="exit-button_icons">
-                            <img width="35vw" height="35vw" src="img/icons/door.svg" alt="LogOut icon">
-                        </div>Выйти из аккаунта
+
+                    <a href="scripts/logout.php" class="menu_section exit">
+                        <img class="shopicons" src="img/icons/door.svg" alt="LogOut icon">
+                        <div class="text"> Выйти из аккаунта </div>
                     </a>
 
                 </div>
                 <div class="borderElement2">
 
+                    <form id="password_menu">
+                        <h2 class="setting_title">Смена пароля</h2>
+                        <div class="error-message">Текст ошибки</div>
+                        <input class="modal_input" type="password" name="password" placeholder="Старый пароль" required>
+                        <input class="modal_input" type="password" name="new-password" placeholder="Новый пароль"
+                            required>
+                        <input class="modal_input" type="password" name="password-repeat" placeholder="Повторите пароль"
+                            required>
+                        <button class="menu-button" type="button">Подтвердить</button>
+                    </form>
+                    
+                    <div id="avatars_menu">
+                        <h3 class="setting_title">Нажмите, чтобы сменить аватар</h3>
+                        <div id="avatarsMenu" class="avatar_menu">
+                            <!-- Аватарки -->
+                            <img class="avatars" src="img/icons/Avatars-1.svg" alt="default avatar" ProductID="0">
+                            
+                        </div>
+                    </div>
                 </div>
             </div>
         </main>
-        
+
+        <div id="modal-success" class="modal_window">
+            <div class="succesregistration_window">
+                <h3 class="title__confirmation__window">Пароль успешно изменён!</h3>
+                <div class="menu-button button__succesregistration">Ok!</div>
+            </div>
+        </div>
+
+        <div id="structure">
+            <img class="avatars" src="" alt="">
+        </div>
     </div>
 </body>
 

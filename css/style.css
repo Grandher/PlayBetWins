@@ -671,7 +671,7 @@ main {
 .registration_window,
 .confirmation_window,
 .thanksforpay_window,
-.succesregistration_window{
+.succesregistration_window {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -1266,35 +1266,82 @@ main {
 
 /*страница настроек профиля*/
 
-.exit {
-    margin-top: 4vw;
-    font-family: 'Futura';
-    font-weight: 400;
-    font-size: 1.2vw;
+.borderElement1 .exit {
+    margin-top: 5vw;
+}
+
+.exit .text {
+    font-size: 1.3vw;
+}
+
+.setting_title {
+    font-family: Futura;
+    font-weight: 600;
+    font-size: 2vw;
+    color: var(--color-basic);
+    margin-top: 6vw;
+}
+
+#avatars_menu {
+    display: none;
+    width: 90%;
+}
+
+.avatar_menu {
+    overflow-y: auto;
+    overflow-x: hidden;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-gap: 2.275vw;
+    min-width: 86%;
+    height: 25.875vw;
+    background-color: var(--color-ground);
+    border-radius: 0.625vw;
+    margin: 0 auto;
+    padding: 4%;
+    margin-top: 4%;
+}
+
+.avatar_menu .avatars {
+    margin: 0;
+    cursor: pointer;
+}
+
+.avatar_menu .disabled {
+    filter: grayscale(1);
+    background-color: white;
+    cursor: default;
+}
+
+#password_menu {
+    width: 40%;
+    height: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background: var(--color-white);
+    border-radius: 1.4vw;
+    padding: 2vw 3.3vw 3.3vw;
+}
+
+#password_menu button {
+    width: 100%;
+    height: 14%;
+    padding-top: 5%;
+    padding-bottom: 4%;
+    font-family: Futura;
+    font-weight: 900;
+    line-height: 1vw;
     text-align: center;
     color: var(--color-white);
-    align-items: flex-start;
+    margin: 0 auto;
+    font-size: 1.5vw;
 }
 
-.exit_icon {
-    margin-top: 4vw;
-    width: 2vw;
-    height: 2vw;
-}
-
-.exit-button {
-    padding-left: 2vw;
-    background-color: var(--color-basic);
-    font-family: 'Futura';
-    font-weight: 400;
-    font-size: 1.2vw;
-    line-height: 15vw;
-    color: var(--color-white);
-}
-
-.exit-button_icons {
-    display: inline-block;
-    margin-right: 4vw;
+#password_menu button:hover {
+    scale: .95;
+    transition: .2s;
+    cursor: pointer;
 }
 
 /*страница настроек профиля*/
@@ -1636,6 +1683,7 @@ main {
     flex-direction: column;
     align-items: center;
 }
+
 .versusInfo span {
     color: var(--color-white);
     font-family: 'Futura';
@@ -1649,6 +1697,7 @@ main {
     width: 5vw;
     transition: border 0.4s, scale 0.4s;
 }
+
 .playerInfo .selected {
     border: 0.3vw var(--color-light-blue) solid;
     border-radius: 50%;
@@ -1744,7 +1793,7 @@ main {
 
 }
 
-.calendar_money_button_two .calendar_button{
+.calendar_money_button_two .calendar_button {
     margin-right: 1vw;
     margin-left: 1vw;
 }
@@ -1757,11 +1806,11 @@ main {
     color: var(--color-basic);
 }
 
-.button_wrap{
+.button_wrap {
     flex-wrap: wrap;
 }
 
-.calendar_button{
+.calendar_button {
     flex-direction: column;
     align-items: center;
     border: 0.2vw var(--color-basic) solid;
@@ -1831,7 +1880,7 @@ main {
     color: var(--color-basic);
 }
 
-.prize_button{
+.prize_button {
     display: inline-block;
     width: 18.75vw;
     height: 2.7vw;
@@ -1841,7 +1890,7 @@ main {
     font-size: 1.25vw;
     line-height: 1.6vw;
     text-align: center;
-    color:var(--color-white);
+    color: var(--color-white);
     background-color: var(--color-basic);
     margin: 0 auto;
     border: none;
@@ -1858,8 +1907,8 @@ main {
     transition: .2s;
     cursor: pointer;
 }
-/*Календарь с монетками*/
 
+/*Календарь с монетками*/
 
 /*Повторяющиеся элементы*/
 #header_login,

@@ -9,6 +9,10 @@ $(function () {
             $(".header__left").attr("href", "index.html");
         } else {
             data = JSON.parse(data);
+            if (data.Avatar) {
+                $("img[alt='Avatar']").attr("src", `img/store/avatars/${data.Name}.svg`);
+                CURRENT_AVATAR = data.Avatar;
+            }
             $(".nickname").text(data.Login);
             $(".balance span").text(data.Balance);
             let statistic = [data.Wins, data.Losses, data.Draws];
@@ -29,14 +33,14 @@ $(function () {
             $('html, body').animate({ scrollTop: 0 }, 400);
             $("body").css("overflow", "hidden");
             $("#modal-login").fadeIn(400);
-        } else if (!$(this).hasClass("disabled") && balance - cost > 0) {
+        } else if (balance - cost < 0) {
+            $("#modal-error").fadeIn(400);
+            $("#modal-error").css("top", $(document).scrollTop());
+        } else if (!$(this).hasClass("disabled")) {
             thisButton = $(this);
             $("body").css("overflow", "hidden");
             $("#modal-conf").fadeIn(400);
             $("#modal-conf").css("top", $(document).scrollTop());
-        } else {
-            $("#modal-error").fadeIn(400);
-            $("#modal-error").css("top", $(document).scrollTop());
         }
     });
 
