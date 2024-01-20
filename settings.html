@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
     <script src="js/jquery-3.6.3.js"></script>
+    <script src="js/theme.js"></script>
     <script src="js/settings.js"></script>
 </head>
 
@@ -35,9 +36,9 @@
                 </div>
 
                 <div id="header_login" class="header__right">
-                    <div class="menu-button button__icons">
+                    <a href="home.html" class="menu-button button__icons">
                         <img class="icon" src="img/icons/calendar-white.svg" alt="calendar">
-                    </div>
+                    </a>
 
                     <div class="menu-button button__profile">
                         <img class="icon" src="img/icons/Avatars-1.svg" alt="Avatar">
@@ -128,14 +129,21 @@
                             required>
                         <button class="menu-button" type="button">Подтвердить</button>
                     </form>
-                    
+
                     <div id="avatars_menu">
                         <h3 class="setting_title">Нажмите, чтобы сменить аватар</h3>
                         <div id="avatarsMenu" class="avatar_menu">
                             <!-- Аватарки -->
                             <img class="avatars" src="img/icons/Avatars-1.svg" alt="default avatar" ProductID="0">
-                            
+
                         </div>
+                    </div>
+
+                    <div id="theme_menu" style="display: none;">
+                        <div class="color_card" name="default"></div>
+                        <div class="color_card" name="silver"></div>
+                        <div class="color_card" name="green"></div>
+                        <div class="color_card" name="dark"></div>
                     </div>
                 </div>
             </div>
@@ -150,6 +158,7 @@
 
         <div id="structure">
             <img class="avatars" src="" alt="">
+            <div class="color"></div>
         </div>
     </div>
 </body>

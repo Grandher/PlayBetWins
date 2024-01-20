@@ -1,6 +1,59 @@
 $(function () {
     let CURRENT_AVATAR;
 
+    const themes = {
+        default: null,
+        silver: {
+            '--color-basic': '#07569B',
+            '--color-ground': '#DCE4E9',
+            '--color-black': '#333',
+            '--color-white': '#FAFAFA',
+            '--color-light-blue': '#7A9CB6',
+            '--color-blue-grey': '#5C7080',
+            '--color-light-grey': '#A2ACB3',
+            '--color-hover': '#2D72B5'
+        },
+        green: {
+            '--color-basic': '#4CAF50',
+            '--color-ground': '#F5F5F5',
+            '--color-black': '#000',
+            '--color-white': '#FFF',
+            '--color-light-blue': '#0BDA51',
+            '--color-blue-grey': '#607D8B',
+            '--color-light-grey': '#CFD8DC',
+            '--color-hover': '#138808'
+        },
+        dark: {
+            '--color-basic': '#3f7ab7',
+            '--color-ground': '#212e3b',
+            '--color-black': '#FFF',
+            '--color-white': '#111111',
+            '--color-light-blue': '#1c628f',
+            '--color-blue-grey': '#95a5a6',
+            '--color-light-grey': '#bdc3c7',
+            '--color-hover': '#3498db',
+        }
+    };
+
+    $(".color_card").each(function () {
+        let name = $(this).attr("name");
+        let current_theme = name == 'default' ? {
+            '--color-basic': '#0E87DF',
+            '--color-ground': '#EFF7FB',
+            '--color-black': '#000',
+            '--color-white': '#FFF',
+            '--color-light-blue': '#95C8E7',
+            '--color-blue-grey': '#7B98B5',
+            '--color-light-grey': '#B8C4C4',
+            '--color-hover': '#3C9AE1',
+        } : themes[name]
+        for (let color in current_theme) {
+            let card = $("#structure .color").clone();
+            $(card).css("background", current_theme[color]);
+            $(this).append(card);
+        }
+    })
+
     $.post("scripts/getHeaderInfo.php", {}, function (data) {
 
         data = JSON.parse(data);
@@ -111,4 +164,24 @@ $(function () {
     $("#modal-success .menu-button").click(function () {
         $("#modal-success").fadeOut(400);
     })
+
+    $("#theme_menu .color_card").click(function () {
+        let name = $(this).attr('name');
+
+        window.localStorage.setItem('theme', JSON.stringify(themes[name]));
+
+        let current_theme = name == 'default' ? {
+            '--color-basic': '#0E87DF',
+            '--color-ground': '#EFF7FB',
+            '--color-black': '#000',
+            '--color-white': '#FFF',
+            '--color-light-blue': '#95C8E7',
+            '--color-blue-grey': '#7B98B5',
+            '--color-light-grey': '#B8C4C4',
+            '--color-hover': '#3C9AE1',
+        } : themes[name]
+        for (let color in current_theme) {
+            $(':root').css(color, current_theme[color]);
+        }
+    });
 })

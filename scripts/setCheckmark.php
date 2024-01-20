@@ -9,16 +9,24 @@ if (isset($_SESSION['id'])) {
     $query->bindParam("id", $id, PDO::PARAM_INT);
     $query->execute();
     $dates = $query->fetch(PDO::FETCH_ASSOC);
-    // Преобразование строк в объекты DateTime
-    $currentDate = new DateTime($dates['CurrentDate']);
-    $checkmarkDate = new DateTime($dates['CheckmarkDate']);
     $reward = $dates['Reward'];
 
-    // Сравнение дат
-    $diff = $currentDate->diff($checkmarkDate);
+    $flag = false;
+    if ($dates['CheckmarkDate'] != 0) {
+        // Преобразование строк в объекты DateTime
+        $currentDate = new DateTime($dates['CurrentDate']);
+        $checkmarkDate = new DateTime($dates['CheckmarkDate']);
+        // Сравнение дат
+        $diff = $currentDate->diff($checkmarkDate);
+        if ($diff->days >= 1) {
+            $flag = true;
+        }
+    } else {
+        $flag = true;
+    }
 
     // Проверка, что разница между датами больше или равна одному дню
-    if ($diff->days >= 1) {
+    if ($flag) {
         $query = $DBH->prepare("UPDATE Account SET CheckmarkDay = CheckmarkDay % 7 + 1, CheckmarkDate = CURRENT_TIMESTAMP WHERE PeopleID = :id;");
         $query->bindParam("id", $id, PDO::PARAM_INT);
         $query->execute();

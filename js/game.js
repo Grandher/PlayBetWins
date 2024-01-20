@@ -8,7 +8,12 @@ $(function () {
             data = JSON.parse(data);
             if (data.Avatar) {
                 $("img[alt='Avatar']").attr("src", `img/store/avatars/${data.Name}.svg`);
-                CURRENT_AVATAR = data.Avatar;
+            }
+            if (data.PlayerAvatar_1) {
+                $(".playerInfo img").first().attr("src", `img/store/avatars/${data.PlayerAvatar_1}.svg`);
+            }
+            if (data.PlayerAvatar_2) {
+                $(".playerInfo img").last().attr("src", `img/store/avatars/${data.PlayerAvatar_2}.svg`);
             }
             $(".nickname").text(data.Login);
             $(".balance span").text(data.Balance);

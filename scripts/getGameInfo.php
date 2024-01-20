@@ -5,8 +5,9 @@ if (isset($_SESSION['id'])) { // Проверка наличия сессии п
     $id = $_SESSION['id']; // Получение идентификатора пользователя из сессии
 
     // Запрос для получения данных пользователя
-    $query = $DBH->prepare("SELECT PeopleID, Login, Balance, Avatar, Reward, CheckmarkDate FROM Account
+    $query = $DBH->prepare("SELECT PeopleID, Login, Balance, Name, Avatar, Reward, CheckmarkDate FROM Account
                             JOIN Checkmark ON CheckmarkDay = NumberDay
+                            LEFT JOIN Store ON Avatar = ProductID
                             WHERE PeopleID=:id");
     $query->bindParam("id", $id, PDO::PARAM_STR);
     $query->execute();
@@ -29,12 +30,14 @@ if (isset($_SESSION['id'])) { // Проверка наличия сессии п
     }
 
     // Запрос для получения информации о текущем матче пользователя
-    $query = $DBH->prepare("SELECT MatchID, PlayerID_1, PlayerID_2, GameID, Name AS GameName,
+    $query = $DBH->prepare("SELECT MatchID, PlayerID_1, PlayerID_2, GameID, Games.Name AS GameName,
                                 A1.Login AS PlayerLogin_1, A2.Login AS PlayerLogin_2,
-                                A1.Avatar AS PlayerAvatar_1, A2.Avatar AS PlayerAvatar_2 FROM Match 
+                                B1.Name AS PlayerAvatar_1, B2.Name AS PlayerAvatar_2 FROM Match 
                             JOIN Account AS 'A1' ON (Match.PlayerID_1 = 'A1'.PeopleID)
                             JOIN Account AS 'A2' ON (Match.PlayerID_2 = 'A2'.PeopleID)
                             JOIN Games USING (GameID)
+                            LEFT JOIN Store AS 'B1' ON A1.Avatar = 'B1'.ProductID
+                            LEFT JOIN Store AS 'B2' ON A2.Avatar = 'B2'.ProductID
                             WHERE Status = 0 AND (PlayerID_1 = :id OR PlayerID_2 = :id);");
     $query->bindParam("id", $id, PDO::PARAM_STR);
     $query->execute();

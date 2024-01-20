@@ -65,6 +65,10 @@ $(function () {
             for (let i = 0; i < 5 - data.length; i++) {
                 $("#betsMenu .menu-button").before($("<p></p>"));
             }
+
+            if (data.length == 0) {
+                $("#betsMenu p").eq(2).text("Пока нет ставок :с");
+            }
         }
 
     });
@@ -85,6 +89,10 @@ $(function () {
             }
             for (let i = 0; i < 5 - data.length; i++) {
                 $("#gameMenu .menu-button").before($("<p></p>"));
+            }
+
+            if (data.length == 0) {
+                $("#gameMenu p").eq(2).text("Пока нет игр :с");
             }
         }
 

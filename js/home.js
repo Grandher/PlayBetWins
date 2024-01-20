@@ -92,6 +92,10 @@ $(function () {
                 $(lastGame).find("img").attr("alt", `${data[i].Title} картинка`);
                 $(".games_square").append(lastGame);
             }
+
+            if (data.length == 0) {
+                $(".games_square").append("<p>Пока нет игр :с</p>");
+            }
         }
 
     });
@@ -100,9 +104,7 @@ $(function () {
         if ($(this).hasClass('current_button')) {
             let button = $(this);
             $.post("scripts/setCheckmark.php", {}, function (data) {
-                console.log(data);
                 if (data == 200) {
-                    console.log(121212);
                     $(button).removeClass("current_button");
                     $(button).css("filter", "grayscale(100%)");
                     $(".balance span").text(parseInt($(".balance span").text()) + Reward);

@@ -565,6 +565,7 @@ main {
     line-height: 1.1vw;
     margin: 0 auto;
     padding: 1.2vw .9vw;
+    color: var(--color-black);
 }
 
 .white_rectangle .present {
@@ -767,6 +768,7 @@ main {
     font-size: 1.4vw;
     line-height: 1vw;
     text-align: center;
+    color: var(--color-black);
 }
 
 .modal_window .large-size {
@@ -882,6 +884,13 @@ main {
     justify-content: space-between;
     align-items: end;
     padding: 2.6vw 4.6vw 5.2vw;
+}
+
+.big_avatar {
+    position: absolute;
+    width: 15vw;
+    left: 15vw;
+    top: 18vw;
 }
 
 .account__right {
@@ -1043,6 +1052,7 @@ main {
     line-height: 2.1vw;
     margin-left: 3%;
     margin-top: 3.125vw;
+    color: var(--color-black);
 }
 
 .shops__account__text:first-child {
@@ -1074,6 +1084,17 @@ main {
     font-size: 2.5vw;
     line-height: 3.2vw;
     margin: auto;
+    color: var(--color-black);
+}
+
+.games_square p,
+#gameMenu p,
+#betsMenu p {
+    font-family: Futura;
+    font-weight: 450;
+    font-size: 1.5vw;
+    margin: auto;
+    color: var(--color-black);
 }
 
 .avatars {
@@ -1342,6 +1363,43 @@ main {
     scale: .95;
     transition: .2s;
     cursor: pointer;
+}
+
+#theme_menu {
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+}
+
+.color_card {
+    display: flex;
+    height: 10vw;
+    width: 42vw;
+    margin-top: 2vw;
+    border: var(--color-basic) solid 0.3vw;
+    border-radius: 1vw;
+    cursor: pointer;
+}
+
+.color_card:last-child {
+    margin-bottom: 2vw;
+}
+
+.color_card .color {
+    flex-grow: 1;
+    transition: all 0.1s ease-in-out;
+}
+
+.color_card .color:first-child {
+    border-radius: .75vw 0 0 .75vw;
+}
+
+.color_card .color:last-child {
+    border-radius: 0 .75vw .75vw 0;
+}
+
+.color_card .color:hover {
+    flex-grow: 1.5;
 }
 
 /*страница настроек профиля*/
