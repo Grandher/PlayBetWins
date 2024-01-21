@@ -51,7 +51,7 @@ if (isset($_SESSION['id']) and isset($_POST['game'])) {
     $query->execute();
     $count = $query->fetch(PDO::FETCH_ASSOC)["Count"];
 
-    if ($count === 0) {
+    if ($count == 0) {
         // Если у игрока нет активных матчей, добавление его в очередь
         $query = $DBH->prepare("INSERT INTO Matching VALUES (:id,:game);");
         $query->bindParam("id", $id, PDO::PARAM_INT);

@@ -72,6 +72,15 @@ $(function () {
 
     });
 
+    $("#test").click(function () {
+        $.post("scripts/testScript.php", { "game": gameID }, function (data) {
+            console.log(data);
+        });
+    });
+
+
+
+
     $("#startRandom").click(function () {
         $.post("scripts/addMatching.php", { "game": gameID }, function (data) {
             data = parseInt(data);

@@ -149,7 +149,7 @@ header {
     justify-content: center;
 }
 
-.menu-button+.menu-button {
+.menu-button + .menu-button {
     margin-left: 1.1vw;
 }
 
@@ -209,7 +209,7 @@ header {
     flex-direction: column;
     justify-content: space-between;
     width: 100%;
-    height: calc(100%-64px);
+    height: calc(100% - 64px);
     margin: 32px 0;
 }
 
@@ -793,7 +793,7 @@ main {
 }
 
 .modal_input {
-    width: calc(100%-1.25vw);
+    width: calc(100% - 1.25vw);
     height: 12.5%;
     padding-left: 1.25vw;
     background-color: #ECECEC;
@@ -1104,7 +1104,7 @@ main {
     border-radius: 50%;
 }
 
-.avatars+.avatars {
+.avatars + .avatars {
     margin-left: 24px;
 }
 
@@ -2000,4 +2000,23 @@ main {
 .account__right__blue,
 .right_button {
     display: flex;
+}
+
+.box {
+    display: flex;
+    align-items: stretch;
+}
+
+.game_padding {
+    padding-left: 10px;
+}
+
+#projection,
+#field {
+    text-align: center;
+    color: var(--color-black);
+    font-family: 'Futura';
+    font-weight: 450;
+    font-size: 1.25vw;
+    margin-bottom: 1vw;
 }

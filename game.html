@@ -69,18 +69,21 @@
                                     <div class="drop-button_icons">
                                         <img width="24px" height="24px" src="img/icons/smile_square.svg"
                                             alt="Profile icon">
-                                    </div>Профиль
+                                    </div>
+                                    Профиль
                                 </a>
                                 <a href="settings.html" class="drop-button">
                                     <div class="drop-button_icons">
                                         <img width="24px" height="24px" src="img/icons/settings-white2.svg"
                                             alt="Setting icon">
-                                    </div>Настройки профиля
+                                    </div>
+                                    Настройки профиля
                                 </a>
                                 <a href="scripts/logout.php" class="drop-button">
                                     <div class="drop-button_icons">
                                         <img width="20px" height="24px" src="img/icons/door.svg" alt="LogOut icon">
-                                    </div>Выйти из аккаунта
+                                    </div>
+                                    Выйти из аккаунта
                                 </a>
                             </div>
                         </div>
@@ -115,7 +118,17 @@
 
                 </div>
                 <div class="gameField">
-                    <canvas id="respondCanvas" width="1000" height="1000" style="cursor: pointer;">
+                    <div class="box" style="margin: auto">
+                        <div>
+                            <div id="projection" class="text-center"></div>
+                            <canvas id="respondCanvas" width="1000" height="1000" style="cursor: pointer;"></canvas>
+                        </div>
+                        <div class="game_padding">
+                            <div id="field" class="text-center"></div>
+                            <canvas id="respondCanvas2" width="1000" height="1000"
+                                style="cursor: pointer;display: none"></canvas>
+                        </div>
+                    </div>
                 </div>
             </div>
         </main>
