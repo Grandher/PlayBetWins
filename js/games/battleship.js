@@ -220,9 +220,6 @@ $(function () {
 
             // Проверка, что клетка пуста и можно поставить крестик или нолик
             if (EnemyField[index] === "N" || EnemyField[index] === "S") {
-
-                console.log({ 'EnemyField': EnemyField, 'Projection': Projection });
-
                 if (EnemyField[index] === "N") {
                     Projection = Projection.substring(0, index) + "B" + Projection.substring(index + 1);
                     EnemyField = EnemyField.substring(0, index) + "B" + EnemyField.substring(index + 1);
@@ -335,18 +332,13 @@ $(function () {
         });
     }
 
-    let TimeLastMove = new Date();
-    ;
+    let timeDiff = 0;
     TIMER = setInterval(function () {
 
-        let currentDate = new Date();
-        let timeDiff = new Date(currentDate.getTime() - TimeLastMove.getTime());
-        timeDiff = timeDiff.toISOString().substring(15, 19);
-        timeDiff = parseInt(timeDiff.split(":")[0], 10) * 60 + parseInt(timeDiff.split(":")[1], 10);
-
-        if (timeDiff <= 60) {
-            min = parseInt((60 - timeDiff) / 60, 10);
-            sec = parseInt((60 - timeDiff) % 60, 10);
+        if (timeDiff <= 60000) {
+            let seconds = 60 - Math.floor(timeDiff / 1000);
+            let min = Math.floor(seconds / 60);
+            let sec = seconds % 60;
             sec = sec < 10 ? "0" + sec : sec;
             $('.stepTimer span').text(min + ":" + sec);
         } else {
@@ -369,23 +361,22 @@ $(function () {
         }, function (data) {
             data = JSON.parse(data);
             if (data.Status == 1) {
-                console.log(data);
                 endGame(data.PlayerID_1, data.PlayerID_2, false);
             } else {
                 if (data.PlayerID_1 == Player) {
                     Projection = data.Field1First;
                     MyField = data.Field2First;
                     EnemyField = data.Field2Second;
-                    console.log("True");
                 } else {
                     Projection = data.Field1Second;
                     MyField = data.Field2Second;
                     EnemyField = data.Field2First
-                    console.log("False");
                 }
                 whoCross = data.whoCross;
                 whoseMove = data.whoseMove;
-                TimeLastMove = new Date(data.TimeLastMove);
+                TimeLastMove = new Date(data.TimeLastMove).getTime();
+                CurrentTime = new Date(data.CurrentTime).getTime();
+                timeDiff = CurrentTime - TimeLastMove;
 
                 // Вызываем функцию для отрисовки игровой доски
                 drawGameBoard();

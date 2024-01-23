@@ -1,0 +1,430 @@
+/*Страница Аккаунта*/
+.account__wrapper {
+    width: 75%;
+    margin: 3.125vw auto;
+}
+
+.grey__rectangle__account {
+    display: flex;
+    justify-content: space-around;
+    height: 14vw;
+    border-radius: .625vw .625vw 0 0;
+    background-color: var(--color-blue-grey);
+    padding: 2.6vw;
+}
+
+.blue__rectangle__accountt {
+    background-color: var(--color-basic);
+    border-radius: 0 0 .625vw .625vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    padding: 2.6vw 4.6vw 5.2vw;
+}
+
+.big_avatar {
+    position: absolute;
+    width: 15vw;
+    left: 15vw;
+    top: 18vw;
+}
+
+.account__right {
+    display: flex;
+    justify-content: end;
+    width: 100%;
+}
+
+.account-button {
+    background-color: var(--color-white);
+    border-radius: .625vw;
+    height: 3.6vw;
+}
+
+.button__settings {
+    margin-left: .9vw;
+    width: 3.9vw;
+}
+
+.settings__account {
+    display: block;
+    width: 70%;
+    height: 70%;
+    margin: 15% auto;
+}
+
+.button__coins {
+    display: flex;
+    width: 8.6vw;
+}
+
+.coins__txt {
+    font-family: TitH;
+    font-weight: 400;
+    font-size: 3.3vw;
+    line-height: 2.3vw;
+    color: var(--color-basic);
+    margin-left: .9vw;
+    margin-top: .7vw;
+}
+
+.coins {
+    display: block;
+    width: 2.6vw;
+    height: 2.6vw;
+    margin: auto;
+}
+
+.header__account__txt {
+    margin-left: 6.25vw;
+    font-family: TitH;
+    font-weight: 400;
+    font-size: 2.6vw;
+    line-height: 3.125vw;
+    text-align: center;
+    color: var(--color-white);
+}
+
+.nickname__account__txt {
+    font-family: Futura;
+    font-weight: 600;
+    font-size: 2.2vw;
+    color: var(--color-white);
+}
+
+.blue__rectangle__account {
+    width: 23.7vw;
+    height: 40vw;
+    background-color: var(--color-basic);
+    border-radius: .625vw;
+}
+
+.white__square__account {
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+    margin: auto;
+    width: 19.4vw;
+    height: 33.2vw;
+    border-radius: .625vw;
+    background-color: var(--color-white);
+}
+
+.white__square__account .player_rate {
+    margin: 0;
+    padding: 0 1.2vw;
+}
+
+.button__account__blue {
+    display: block;
+    padding-top: .625vw;
+    width: 12vw;
+    height: 2.7vw;
+    font-family: Futura;
+    font-weight: 600;
+    font-size: 1.1vw;
+    line-height: 2.1vw;
+    text-align: center;
+    color: var(--color-white);
+    margin: auto;
+}
+
+.account__title {
+    color: var(--color-white);
+    font-family: Futura;
+    font-weight: 450;
+    font-size: 1.65vw;
+    line-height: 2.1vw;
+    text-align: center;
+    padding: 1.3vw 0;
+}
+
+.description__account {
+    padding-top: 2.6vw;
+    font-family: Futura;
+    font-weight: 400;
+    font-size: 1.65vw;
+    line-height: 2.1vw;
+    text-align: center;
+    color: var(--color-black);
+}
+
+.account__logo {
+    display: block;
+    width: 6.65vw;
+    height: 6.65vw;
+    margin: 0 auto;
+}
+
+.blue__rectangle__account__footer {
+    background-color: var(--color-basic);
+    width: 100%;
+    border-radius: .625vw;
+    margin: 3.125vw auto;
+    padding: 1.55vw 0 3.125vw;
+}
+
+.shops__account {
+    font-family: Futura;
+    font-weight: 450;
+    font-size: 1.65vw;
+    line-height: 2.1vw;
+    margin-left: 2.1vw;
+    color: var(--color-white);
+    margin-bottom: 1.55vw;
+}
+
+.white__rectangle__account__footer {
+    width: 94%;
+    background-color: var(--color-white);
+    border-radius: .625vw;
+    margin: auto;
+    padding: 1.4vw 0 2vw;
+}
+
+.shops__account__text {
+    font-family: Futura;
+    font-weight: 450;
+    font-size: 1.65vw;
+    line-height: 2.1vw;
+    margin-left: 3%;
+    margin-top: 3.125vw;
+    color: var(--color-black);
+}
+
+.shops__account__text:first-child {
+    margin-top: 0;
+}
+
+.ground__rectangle {
+    overflow-x: auto;
+    display: flex;
+    align-items: center;
+    width: 86%;
+    height: 11.875vw;
+    background-color: var(--color-ground);
+    border-radius: .625vw;
+    margin: 0 auto;
+    padding: 0 4%;
+}
+
+.account__logo__footter {
+    width: 6.65vw;
+    height: 6.65vw;
+    margin-right: 2vw;
+}
+
+.not_pictures {
+    display: block;
+    font-family: Futura;
+    font-weight: 450;
+    font-size: 2.5vw;
+    line-height: 3.2vw;
+    margin: auto;
+    color: var(--color-black);
+}
+
+.games_square p,
+#gameMenu p,
+#betsMenu p {
+    font-family: Futura;
+    font-weight: 450;
+    font-size: 1.5vw;
+    margin: auto;
+    color: var(--color-black);
+}
+
+.player_statistic {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    margin-left: 1vw;
+    padding-bottom: .1vw;
+    border-bottom: .15vw solid var(--color-light-blue);
+    border-radius: .11vw;
+    width: 100%;
+}
+
+.small__grey__rectangle {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 17vw;
+    height: 4vw;
+    background-color: var(--color-light-blue);
+    border-radius: .625vw;
+    margin: auto;
+}
+
+/*Страница Аккаунта*/
+
+@media (max-width: 800px) {
+
+    .account__wrapper {
+        margin: 3.125vh auto;
+    }
+
+    .grey__rectangle__account {
+        height: 4vh;
+        border-radius: .625vh .625vh 0 0;
+        padding: 2.6vh;
+    }
+
+    .blue__rectangle__accountt {
+        border-radius: 0 0 .625vh .625vh;
+        padding: 2.6vh 3.6vh 2.2vh;
+    }
+
+    .account-button {
+        border-radius: .625vh;
+        height: 3.6vh;
+    }
+
+    .button__settings {
+        margin-left: .9vh;
+        width: 3.9vh;
+    }
+
+    .button__coins {
+        width: 8.6vh;
+    }
+
+    .coins__txt {
+        font-size: 3.3vh;
+        line-height: 2.3vh;
+        margin-left: .9vh;
+        margin-top: .7vh;
+    }
+
+    .coins {
+        width: 2.6vh;
+        height: 2.6vh;
+    }
+
+    .header__account__txt {
+        margin-left: 1.5vh;
+        font-size: 2.6vh;
+        line-height: 3.125vh;
+    }
+
+    .nickname__account__txt {
+        font-size: 2.2vh;
+        margin-bottom: 1vh;
+    }
+
+    .small__grey__rectangle {
+        width: 17vh;
+        height: 4vh;
+        border-radius: .625vh;
+        margin-bottom: 1vh;
+    }
+
+    .small__grey__rectangle h3 {
+        font-size: 3vw;
+    }
+
+    .big_avatar {
+        top: 24.45vw;
+        width: 10vh;
+    }
+
+    .blue__rectangle__account {
+        width: 70%;
+        height: auto;
+        border-radius: .625vh;
+        margin-bottom: 4vh;
+        padding-bottom: 3vh;
+    }
+
+    .account__title {
+        font-size: 3.65vw;
+        padding: 3.3vw 0;
+    }
+
+    .white__square__account {
+        width: 90%;
+        height: auto;
+        border-radius: .625vh;
+        padding: 2vh 0;
+    }
+
+    .white__square__account .player_rate {
+        padding: 1.2vh;
+    }
+
+    .button__account__blue {
+        padding-top: .625vh;
+        width: 12vh;
+        height: 2.7vh;
+        font-size: 1.1vh;
+        line-height: 2.1vh;
+    }
+
+    .account__title {
+        font-size: 2vh;
+        line-height: 2.1vh;
+        padding: 1.3vh 0;
+    }
+
+    .description__account {
+        padding-top: 2.6vh;
+        font-size: 1.65vh;
+        line-height: 2.1vh;
+    }
+
+    .account__logo {
+        width: 6.65vh;
+        height: 6.65vh;
+    }
+
+    .blue__rectangle__account__footer {
+        border-radius: .625vh;
+        margin: 3.125vh auto;
+        padding: 1.55vh 0 3.125vh;
+    }
+
+    .shops__account {
+        font-size: 1.65vh;
+        line-height: 2.1vh;
+        margin-left: 2.1vh;
+        margin-bottom: 1.55vh;
+    }
+
+    .white__rectangle__account__footer {
+        border-radius: .625vh;
+        padding: 1.4vh 0 2vh;
+    }
+
+    .shops__account__text {
+        font-size: 1.65vh;
+        line-height: 2.1vh;
+    }
+
+    .games_square p,
+    #gameMenu p,
+    #betsMenu p {
+        font-size: 1.5vh;
+    }
+
+    .avatars {
+        width: 6.65vh;
+        height: 6.65vh;
+        border: .3vh solid var(--color-basic);
+    }
+
+    .player_statistic {
+        margin-left: 1vh;
+        padding-bottom: .1vh;
+        border-bottom: .15vh solid var(--color-light-blue);
+        border-radius: .11vh;
+        align-items: center;
+    }
+
+    .top_player .nickname {
+        font-size: 3vw;
+        margin-left: 0;
+        line-height: 0;
+    }
+
+    .top_player .nickname {
+        font-size: 1.75vh;
+    }
+}

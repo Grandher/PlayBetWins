@@ -1,0 +1,283 @@
+/*Главная до авторизации*/
+.title__wrapper {
+    width: 75%;
+    padding-top: 9vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: auto;
+}
+
+.title__box {
+    max-width: 34vw;
+    display: flex;
+    flex-direction: column;
+}
+
+.title__box .title {
+    font-family: Tith;
+    font-weight: 400;
+    font-size: 5.3vw;
+    line-height: 3.75vw;
+    color: var(--color-basic);
+}
+
+.title__box .description {
+    margin-top: 1vw;
+    font-family: Futura;
+    font-weight: 400;
+    font-size: 1.6vw;
+    line-height: 2.1vw;
+}
+
+.mascot {
+    width: 26vw;
+    height: 26vw;
+}
+
+.button__registration {
+    margin-top: 2vw;
+    width: 24vw;
+    height: 3.4vw;
+    padding-top: 1.7vw;
+    font-family: Futura;
+    font-weight: 600;
+    font-size: 1.7vw;
+    line-height: 2.1vw;
+    text-align: center;
+    color: var(--color-white);
+}
+
+.blue__rectangle {
+    display: flex;
+    justify-content: space-around;
+    background-color: var(--color-basic);
+    margin-top: 9vw;
+    width: 100%;
+    height: 55vh;
+    padding: 2.6vw 0;
+}
+
+.white__square {
+    display: grid;
+    grid-template-rows: 1fr 3fr 1fr;
+    background-color: var(--color-white);
+    width: 22vw;
+    height: 20vw;
+    border-radius: .625vw;
+}
+
+.neheader__name {
+    font-family: Tith;
+    font-weight: 400;
+    font-size: 3.3vw;
+    line-height: 2.4vw;
+    text-align: center;
+    color: var(--color-basic);
+    margin: 2vw 0;
+}
+
+.neheader__text {
+    font-family: Futura;
+    font-weight: 400;
+    font-size: 1.25vw;
+    line-height: 1.6vw;
+    text-align: center;
+    padding: 0 1.3vw;
+}
+
+.neheader__logo {
+    display: block;
+    width: 4.4vw;
+    height: 4.4vw;
+    padding-bottom: .65vw;
+    margin: 0 auto;
+}
+
+.boy__with__money {
+    background-color: var(--color-white);
+    width: 50vw;
+    height: 40vw;
+    margin: 6vw auto;
+}
+
+.boy__with__money .title {
+    font-family: TitH;
+    font-weight: 400;
+    font-size: 5vw;
+    line-height: 3.6vw;
+    text-align: center;
+    color: var(--color-basic);
+    padding-top: 2vw;
+}
+
+.boy__money {
+    display: block;
+    width: 22vw;
+    margin: 3.75vw auto;
+}
+
+.boy__with__money .discription {
+    font-family: Futura;
+    font-weight: 400;
+    font-size: 1.8vw;
+    line-height: 2.4vw;
+    text-align: center;
+    color: var(--color-black);
+}
+
+.grey__rectangle {
+    display: flex;
+    justify-content: space-around;
+    background-color: var(--color-light-grey);
+    width: 100%;
+    height: 13vw;
+    padding: 5vw 0;
+}
+
+.footer__name,
+.footer__text {
+    font-family: Futura;
+    font-size: 1.25vw;
+}
+
+.footer__name {
+    font-weight: 600;
+    line-height: 1.6vw;
+}
+
+.footer__text {
+    margin-top: 1.25vw;
+    font-weight: 400;
+    line-height: 2.2vw;
+}
+
+.blue__grey__rectangle {
+    display: flex;
+    justify-content: space-around;
+    background-color: var(--color-blue-grey);
+    width: 100%;
+    height: 1.8vw;
+    padding-top: 1vw;
+}
+
+.blue__grey__rectangle__text {
+    font-family: Futura;
+    font-weight: 400;
+    font-size: .7vw;
+    line-height: .9vw;
+    text-align: center;
+}
+
+/*Главная до авторизации*/
+
+@media (max-width: 800px) {
+
+    .title__box {
+        max-width: 34vw;
+    }
+
+    .title__box .title {
+        font-size: 3vh;
+        line-height: 2vh;
+    }
+
+    .title__box .description {
+        font-size: 1vh;
+        line-height: 2vh;
+    }
+
+    .mascot {
+        width: 26vw;
+        height: 26vw;
+    }
+
+    .button__registration {
+        width: 38vw;
+        height: 6.4vw;
+        padding-top: 1.7vw;
+        font-size: 1.7vh;
+        line-height: 2.1vh;
+    }
+
+    .blue__rectangle {
+        margin-top: 9vh;
+        height: auto;
+        padding: 2.6vh 0;
+    }
+
+    .white__square {
+        width: 22vh;
+        height: 20vh;
+        border-radius: .625vh;
+    }
+
+    .neheader__name {
+        font-size: 3.3vh;
+        line-height: 2.4vh;
+        margin: 2vh 0;
+    }
+
+    .neheader__text {
+        font-size: 1.25vh;
+        line-height: 1.6vh;
+        padding: 0 1.3vh;
+    }
+
+    .neheader__logo {
+        width: 4.4vh;
+        height: 4.4vh;
+        padding-bottom: .65vh;
+    }
+
+    .boy__with__money {
+        width: 100%;
+        height: 40vh;
+        margin: 6vh auto;
+    }
+
+    .boy__with__money .title {
+        font-size: 5vh;
+        line-height: 3.6vh;
+        padding-top: 2vh;
+    }
+
+    .boy__money {
+        width: 22vh;
+        margin: 3.75vh auto;
+    }
+
+    .boy__with__money .discription {
+        font-size: 1.8vh;
+        line-height: 2.4vh;
+    }
+
+    .grey__rectangle {
+        height: 13vh;
+        padding: 5vh 0;
+    }
+
+    .footer__name,
+    .footer__text {
+        font-size: 1.25vh;
+    }
+
+    .footer__name {
+        line-height: 1.6vh;
+    }
+
+    .footer__text {
+        margin-top: 1.25vh;
+        line-height: 2.2vh;
+    }
+
+    .blue__grey__rectangle {
+        height: 1.8vh;
+        padding-top: 1vh;
+    }
+
+    .blue__grey__rectangle__text {
+        font-size: .7vh;
+        line-height: .9vh;
+    }
+}

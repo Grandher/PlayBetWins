@@ -89,7 +89,7 @@ a {
 .flex {
     display: flex;
     flex-direction: column;
-    height: 100vh;
+    min-height: 100vh;
     background-color: var(--color-ground);
 }
 
@@ -98,6 +98,10 @@ a {
 header {
     width: 100%;
     background-color: var(--color-white);
+}
+
+.phoneMenu {
+    display: none;
 }
 
 .header__wrapper {
@@ -122,6 +126,14 @@ header {
     background-repeat: no-repeat;
     width: 3.5vw;
     height: 3.5vw;
+}
+
+.header__logo path.st0 {
+    stroke: var(--color-basic);
+}
+
+.header__logo path.st1 {
+    fill: var(--color-basic);
 }
 
 .header__name {
@@ -149,7 +161,7 @@ header {
     justify-content: center;
 }
 
-.menu-button + .menu-button {
+.menu-button+.menu-button {
     margin-left: 1.1vw;
 }
 
@@ -202,6 +214,7 @@ header {
     box-shadow: 0 10px 20px 0 #000;
     border-radius: 0 0 12px 12px;
     transition: .5s ease-in-out;
+    z-index: 50;
 }
 
 .drop__wrapper {
@@ -306,327 +319,6 @@ header {
 
 /*Выпадающее окно*/
 /*Заголовок*/
-/*Главная до авторизации*/
-.title__wrapper {
-    width: 75%;
-    padding-top: 9vw;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: auto;
-}
-
-.title__box {
-    max-width: 34vw;
-    display: flex;
-    flex-direction: column;
-}
-
-.title__box .title {
-    font-family: Tith;
-    font-weight: 400;
-    font-size: 5.3vw;
-    line-height: 3.75vw;
-    color: var(--color-basic);
-}
-
-.title__box .description {
-    margin-top: 1vw;
-    font-family: Futura;
-    font-weight: 400;
-    font-size: 1.6vw;
-    line-height: 2.1vw;
-}
-
-.mascot {
-    width: 26vw;
-    height: 26vw;
-}
-
-.button__registration {
-    margin-top: 2vw;
-    width: 24vw;
-    height: 3.4vw;
-    padding-top: 1.7vw;
-    font-family: Futura;
-    font-weight: 600;
-    font-size: 1.7vw;
-    line-height: 2.1vw;
-    text-align: center;
-    color: var(--color-white);
-}
-
-.blue__rectangle {
-    display: flex;
-    justify-content: space-around;
-    background-color: var(--color-basic);
-    margin-top: 9vw;
-    width: 100%;
-    height: 55vh;
-    padding: 2.6vw 0;
-}
-
-.white__square {
-    display: grid;
-    grid-template-rows: 1fr 3fr 1fr;
-    background-color: var(--color-white);
-    width: 22vw;
-    height: 20vw;
-    border-radius: .625vw;
-}
-
-.neheader__name {
-    font-family: Tith;
-    font-weight: 400;
-    font-size: 3.3vw;
-    line-height: 2.4vw;
-    text-align: center;
-    color: var(--color-basic);
-    margin: 2vw 0;
-}
-
-.neheader__text {
-    font-family: Futura;
-    font-weight: 400;
-    font-size: 1.25vw;
-    line-height: 1.6vw;
-    text-align: center;
-    padding: 0 1.3vw;
-}
-
-.neheader__logo {
-    display: block;
-    width: 4.4vw;
-    height: 4.4vw;
-    padding-bottom: .65vw;
-    margin: 0 auto;
-}
-
-.boy__with__money {
-    background-color: var(--color-white);
-    width: 50vw;
-    height: 40vw;
-    margin: 6vw auto;
-}
-
-.boy__with__money .title {
-    font-family: TitH;
-    font-weight: 400;
-    font-size: 5vw;
-    line-height: 3.6vw;
-    text-align: center;
-    color: var(--color-basic);
-    padding-top: 2vw;
-}
-
-.boy__money {
-    display: block;
-    width: 22vw;
-    margin: 3.75vw auto;
-}
-
-.boy__with__money .discription {
-    font-family: Futura;
-    font-weight: 400;
-    font-size: 1.8vw;
-    line-height: 2.4vw;
-    text-align: center;
-    color: var(--color-black);
-}
-
-.grey__rectangle {
-    display: flex;
-    justify-content: space-around;
-    background-color: var(--color-light-grey);
-    width: 100%;
-    height: 13vw;
-    padding: 5vw 0;
-}
-
-.footer__name,
-.footer__text {
-    font-family: Futura;
-    font-size: 1.25vw;
-}
-
-.footer__name {
-    font-weight: 600;
-    line-height: 1.6vw;
-}
-
-.footer__text {
-    margin-top: 1.25vw;
-    font-weight: 400;
-    line-height: 2.2vw;
-}
-
-.blue__grey__rectangle {
-    display: flex;
-    justify-content: space-around;
-    background-color: var(--color-blue-grey);
-    width: 100%;
-    height: 1.8vw;
-    padding-top: 1vw;
-}
-
-.blue__grey__rectangle__text {
-    font-family: Futura;
-    font-weight: 400;
-    font-size: .7vw;
-    line-height: .9vw;
-    text-align: center;
-}
-
-/*Главная до авторизации*/
-
-/*Главная после авторизации*/
-main {
-    width: 100%;
-    background-color: var(--color-ground);
-    box-shadow: inset 0 4px 4px rgba(0, 0, 0, 0.25);
-}
-
-.main_title {
-    font-family: Tith;
-    font-weight: 400;
-    font-size: 5vw;
-    line-height: 3.6vw;
-    text-align: center;
-    color: var(--color-basic);
-    padding: 2vw 0;
-}
-
-.title_catalog {
-    padding: 6vw 0;
-}
-
-.main__wrapper {
-    width: 75%;
-    display: flex;
-    justify-content: space-between;
-    margin: auto;
-}
-
-.wrap {
-    flex-wrap: wrap;
-}
-
-.main__one_page {
-    height: 100%;
-}
-
-.white_rectangle {
-    width: 24vw;
-    height: 35vw;
-    background: var(--color-white);
-    border-radius: .625vw;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    margin-bottom: 6vw;
-    padding: 1.3vw 0;
-}
-
-.white_rectangle .title {
-    font-family: Futura;
-    font-weight: 600;
-    font-size: 1.8vw;
-    line-height: 2.3vw;
-    text-align: center;
-    color: var(--color-basic);
-}
-
-.button__rectangle {
-    width: 18.75vw;
-    height: 2.7vw;
-    padding-top: 1vw;
-    font-family: Futura;
-    font-weight: 450;
-    font-size: 1.25vw;
-    line-height: 1.6vw;
-    text-align: center;
-    color: var(--color-white);
-    margin: 0 auto;
-}
-
-.checkmark_info {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 18.85vw;
-    height: 9vw;
-    background: var(--color-white);
-    border: 1px solid var(--color-basic);
-    text-align: center;
-    border-radius: .7vw;
-    font-family: Futura;
-    font-weight: 450;
-    font-size: 1.1vw;
-    line-height: 1.1vw;
-    margin: 0 auto;
-    padding: 1.2vw .9vw;
-    color: var(--color-black);
-}
-
-.white_rectangle .present {
-    width: 7.8vw;
-    height: 9vw;
-    transition: scale 1s, transform 1s ease-in-out;
-    margin: 0 auto;
-}
-
-.white_rectangle .present:hover {
-    scale: 1.1;
-}
-
-.top_player {
-    display: grid;
-    grid-template-columns: 1fr 3fr 1fr;
-    align-items: center;
-    padding: 0 2.6vw;
-}
-
-.top_player .top-nickname,
-.top_player .score {
-    font-family: Futura;
-    font-weight: 450;
-    font-size: 1.25vw;
-    line-height: 1.6vw;
-    color: var(--color-black);
-}
-
-.top_player .avatar,
-.small__grey__rectangle .avatar {
-    width: 2.9vw;
-    height: 2.9vw;
-}
-
-.top_player .nickname {
-    margin-left: 1vw;
-}
-
-.top_player .score {
-    text-align: right;
-}
-
-.games_square {
-    display: flex;
-    flex-wrap: wrap;
-    padding: 2vw;
-}
-
-.games_square .game_image {
-    width: 7.8vw;
-    height: 7.8vw;
-    transition: scale .5s;
-    padding: 1vw;
-}
-
-.games_square .game_image:hover {
-    scale: 1.15;
-}
-
-/*Главная после авторизации*/
 
 /*Каталог игр сайта*/
 .gametitle {
@@ -862,239 +554,87 @@ main {
 
 /*Модальные окна*/
 
-/*Страница Аккаунта*/
-.account__wrapper {
+.main__wrapper {
     width: 75%;
-    margin: 3.125vw auto;
-}
-
-.grey__rectangle__account {
-    display: flex;
-    justify-content: space-around;
-    height: 14vw;
-    border-radius: .625vw .625vw 0 0;
-    background-color: var(--color-blue-grey);
-    padding: 2.6vw;
-}
-
-.blue__rectangle__accountt {
-    background-color: var(--color-basic);
-    border-radius: 0 0 .625vw .625vw;
     display: flex;
     justify-content: space-between;
-    align-items: end;
-    padding: 2.6vw 4.6vw 5.2vw;
-}
-
-.big_avatar {
-    position: absolute;
-    width: 15vw;
-    left: 15vw;
-    top: 18vw;
-}
-
-.account__right {
-    display: flex;
-    justify-content: end;
-    width: 100%;
-}
-
-.account-button {
-    background-color: var(--color-white);
-    border-radius: .625vw;
-    height: 3.6vw;
-}
-
-.button__settings {
-    margin-left: .9vw;
-    width: 3.9vw;
-}
-
-.settings__account {
-    display: block;
-    width: 70%;
-    height: 70%;
-    margin: 15% auto;
-}
-
-.button__coins {
-    display: flex;
-    width: 8.6vw;
-}
-
-.coins__txt {
-    font-family: TitH;
-    font-weight: 400;
-    font-size: 3.3vw;
-    line-height: 2.3vw;
-    color: var(--color-basic);
-    margin-left: .9vw;
-    margin-top: .7vw;
-}
-
-.coins {
-    display: block;
-    width: 2.6vw;
-    height: 2.6vw;
     margin: auto;
 }
 
-.header__account__txt {
-    margin-left: 6.25vw;
-    font-family: TitH;
-    font-weight: 400;
-    font-size: 2.6vw;
-    line-height: 3.125vw;
-    text-align: center;
-    color: var(--color-white);
+.wrap {
+    flex-wrap: wrap;
 }
 
-.nickname__account__txt {
-    font-family: Futura;
-    font-weight: 600;
-    font-size: 2.2vw;
-    color: var(--color-white);
-}
-
-.blue__rectangle__account {
-    width: 23.7vw;
-    height: 40vw;
-    background-color: var(--color-basic);
-    border-radius: .625vw;
-}
-
-.white__square__account {
-    display: grid;
-    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
-    margin: auto;
-    width: 19.4vw;
-    height: 33.2vw;
-    border-radius: .625vw;
-    background-color: var(--color-white);
-}
-
-.white__square__account .player_rate {
-    margin: 0;
-    padding: 0 1.2vw;
-}
-
-.button__account__blue {
-    display: block;
-    padding-top: .625vw;
-    width: 12vw;
+.button__rectangle {
+    width: 18.75vw;
     height: 2.7vw;
-    font-family: Futura;
-    font-weight: 600;
-    font-size: 1.1vw;
-    line-height: 2.1vw;
-    text-align: center;
-    color: var(--color-white);
-    margin: auto;
-}
-
-.account__title {
-    color: var(--color-white);
+    padding-top: 1vw;
     font-family: Futura;
     font-weight: 450;
-    font-size: 1.65vw;
-    line-height: 2.1vw;
+    font-size: 1.25vw;
+    line-height: 1.6vw;
     text-align: center;
-    padding: 1.3vw 0;
+    color: var(--color-white);
+    margin: 0 auto;
 }
 
-.description__account {
-    padding-top: 2.6vw;
-    font-family: Futura;
+.main_title {
+    font-family: Tith;
     font-weight: 400;
-    font-size: 1.65vw;
-    line-height: 2.1vw;
+    font-size: 5vw;
+    line-height: 3.6vw;
     text-align: center;
-    color: var(--color-black);
+    color: var(--color-basic);
+    padding: 2vw 0;
 }
 
-.account__logo {
-    display: block;
-    width: 6.65vw;
-    height: 6.65vw;
-    margin: 0 auto;
+.title_catalog {
+    padding: 6vw 0;
 }
 
-.blue__rectangle__account__footer {
-    background-color: var(--color-basic);
-    width: 100%;
-    border-radius: .625vw;
-    margin: 3.125vw auto;
-    padding: 1.55vw 0 3.125vw;
-}
-
-.shops__account {
-    font-family: Futura;
-    font-weight: 450;
-    font-size: 1.65vw;
-    line-height: 2.1vw;
-    margin-left: 2.1vw;
-    color: var(--color-white);
-    margin-bottom: 1.55vw;
-}
-
-.white__rectangle__account__footer {
-    width: 94%;
-    background-color: var(--color-white);
-    border-radius: .625vw;
-    margin: auto;
-    padding: 1.4vw 0 2vw;
-}
-
-.shops__account__text {
-    font-family: Futura;
-    font-weight: 450;
-    font-size: 1.65vw;
-    line-height: 2.1vw;
-    margin-left: 3%;
-    margin-top: 3.125vw;
-    color: var(--color-black);
-}
-
-.shops__account__text:first-child {
-    margin-top: 0;
-}
-
-.ground__rectangle {
-    overflow-x: auto;
-    display: flex;
+.top_player {
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr;
     align-items: center;
-    width: 86%;
-    height: 11.875vw;
-    background-color: var(--color-ground);
-    border-radius: .625vw;
-    margin: 0 auto;
-    padding: 0 4%;
+    padding: 0 2.6vw;
 }
 
-.account__logo__footter {
-    width: 6.65vw;
-    height: 6.65vw;
-    margin-right: 2vw;
-}
-
-.not_pictures {
-    display: block;
+.top_player .top-nickname,
+.top_player .score {
     font-family: Futura;
     font-weight: 450;
-    font-size: 2.5vw;
-    line-height: 3.2vw;
-    margin: auto;
+    font-size: 1.25vw;
+    line-height: 1.6vw;
     color: var(--color-black);
 }
 
-.games_square p,
-#gameMenu p,
-#betsMenu p {
-    font-family: Futura;
-    font-weight: 450;
-    font-size: 1.5vw;
-    margin: auto;
-    color: var(--color-black);
+.top_player .avatar,
+.small__grey__rectangle .avatar {
+    width: 2.9vw;
+    height: 2.9vw;
+}
+
+.top_player .nickname {
+    margin-left: 1vw;
+}
+
+.top_player .score {
+    text-align: right;
+}
+
+.white_rectangle .present path,
+.back_image path,
+.coin_image path,
+.settings__account path,
+.button__coins .coins path,
+.gametitle path,
+.games_square .game_image path {
+    fill: var(--color-basic);
+}
+
+.gametitle path.red,
+.game_image path.red {
+    fill: red;
 }
 
 .avatars {
@@ -1104,305 +644,9 @@ main {
     border-radius: 50%;
 }
 
-.avatars + .avatars {
+.avatars+.avatars {
     margin-left: 24px;
 }
-
-.player_statistic {
-    display: grid;
-    grid-template-columns: 2fr 1fr 1fr;
-    margin-left: 1vw;
-    padding-bottom: .1vw;
-    border-bottom: .15vw solid var(--color-light-blue);
-    border-radius: .11vw;
-    width: 100%;
-}
-
-.small__grey__rectangle {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    width: 17vw;
-    height: 4vw;
-    background-color: var(--color-light-blue);
-    border-radius: .625vw;
-    margin: auto;
-}
-
-/*Страница Аккаунта*/
-
-/*Магазин*/
-
-.blocks {
-    width: 75%;
-    height: 55%;
-    display: flex;
-    margin: 3vw auto;
-}
-
-.borderElement1 {
-    display: flex;
-    width: 22vw;
-    padding: 6vw 0;
-    height: 30vw;
-    background-color: var(--color-basic);
-    border-radius: 1.3vw 0 0 1.3vw;
-    flex-direction: column;
-    justify-content: space-between;
-}
-
-.borderElement1 .title {
-    font-family: 'Futura';
-    font-weight: 600;
-    font-size: 2.2vw;
-    text-align: center;
-    color: var(--color-white);
-    margin-bottom: 4vw;
-}
-
-.borderElement1 .menu_section {
-    padding: 1% 12%;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    cursor: pointer;
-}
-
-.borderElement1 .text {
-    font-family: 'Futura';
-    font-weight: 400;
-    font-size: 1.8vw;
-    text-align: center;
-    color: var(--color-white);
-
-}
-
-.borderElement1 .selected {
-    background-color: var(--color-hover);
-}
-
-.borderElement1 .selected .text {
-    scale: .95;
-    font-weight: 600;
-}
-
-.menu_section .shopicons {
-    width: 2.6vw;
-    height: 2.6vw;
-}
-
-.borderElement2 {
-    width: 60vw;
-    height: 42vw;
-    background-color: var(--color-white);
-    border-radius: 0px 1.3vw 1.3vw 0px;
-    display: flex;
-    justify-content: space-evenly;
-    align-items: flex-start;
-    flex-wrap: wrap;
-    overflow: auto;
-}
-
-.borderElement3 {
-    width: 60vw;
-    height: 36vw;
-    padding: 3vw 0;
-    background-color: var(--color-white);
-    border-radius: 0px 1.3vw 1.3vw 0px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    overflow: auto;
-}
-
-.borderElement3 .top_player {
-    margin: .75vw auto;
-    width: 80%;
-}
-
-.shopbottom {
-    padding: 1.6vw 0 0 1.6vw;
-}
-
-.shopbottom .disabled {
-    background-color: var(--color-light-grey);
-}
-
-.shopbottom .disabled:hover {
-    scale: 1;
-    cursor: default;
-}
-
-.shop {
-    display: flex;
-    align-items: flex-start;
-    flex-direction: column;
-}
-
-
-.shopcatalog {
-    width: 9.2vw;
-    height: 9.2vw;
-    display: flex;
-    align-items: flex-start;
-    margin: 0.5vw 1vw 0.5vw 1vw;
-}
-
-.pricebutton {
-    width: 8.9vw;
-    height: 2.6vw;
-    background-color: var(--color-basic);
-    border-radius: 0.75vw;
-    font-family: 'TitH';
-    font-size: 1.8vw;
-    line-height: 1.3vw;
-    text-align: center;
-    color: var(--color-white);
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    margin: 0.5vw 1vw 0.5vw 1vw;
-}
-
-.pricebutton .icon {
-    width: 1.2vw;
-    height: 1.2vw;
-    margin-left: 0.25vw;
-}
-
-.shopcatalog .img-game {
-    width: 6.9vw;
-    height: 6.9vw;
-    border: .25vw solid var(--color-basic);
-    border-radius: 50%;
-}
-
-.shopcatalog .img-game::before {
-    background-color: #8D8D8D;
-}
-
-/*Магазин*/
-
-/*страница настроек профиля*/
-
-.borderElement1 .exit {
-    margin-top: 5vw;
-}
-
-.exit .text {
-    font-size: 1.3vw;
-}
-
-.setting_title {
-    font-family: Futura;
-    font-weight: 600;
-    font-size: 2vw;
-    color: var(--color-basic);
-    margin-top: 6vw;
-}
-
-#avatars_menu {
-    display: none;
-    width: 90%;
-}
-
-.avatar_menu {
-    overflow-y: auto;
-    overflow-x: hidden;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-    grid-gap: 2.275vw;
-    min-width: 86%;
-    height: 25.875vw;
-    background-color: var(--color-ground);
-    border-radius: 0.625vw;
-    margin: 0 auto;
-    padding: 4%;
-    margin-top: 4%;
-}
-
-.avatar_menu .avatars {
-    margin: 0;
-    cursor: pointer;
-}
-
-.avatar_menu .disabled {
-    filter: grayscale(1);
-    background-color: white;
-    cursor: default;
-}
-
-#password_menu {
-    width: 40%;
-    height: 60%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    background: var(--color-white);
-    border-radius: 1.4vw;
-    padding: 2vw 3.3vw 3.3vw;
-}
-
-#password_menu button {
-    width: 100%;
-    height: 14%;
-    padding-top: 5%;
-    padding-bottom: 4%;
-    font-family: Futura;
-    font-weight: 900;
-    line-height: 1vw;
-    text-align: center;
-    color: var(--color-white);
-    margin: 0 auto;
-    font-size: 1.5vw;
-}
-
-#password_menu button:hover {
-    scale: .95;
-    transition: .2s;
-    cursor: pointer;
-}
-
-#theme_menu {
-    display: flex;
-    flex-direction: column;
-    overflow-y: auto;
-}
-
-.color_card {
-    display: flex;
-    height: 10vw;
-    width: 42vw;
-    margin-top: 2vw;
-    border: var(--color-basic) solid 0.3vw;
-    border-radius: 1vw;
-    cursor: pointer;
-}
-
-.color_card:last-child {
-    margin-bottom: 2vw;
-}
-
-.color_card .color {
-    flex-grow: 1;
-    transition: all 0.1s ease-in-out;
-}
-
-.color_card .color:first-child {
-    border-radius: .75vw 0 0 .75vw;
-}
-
-.color_card .color:last-child {
-    border-radius: 0 .75vw .75vw 0;
-}
-
-.color_card .color:hover {
-    flex-grow: 1.5;
-}
-
-/*страница настроек профиля*/
 
 /*Страница с инфой об игре*/
 .main_block {
@@ -1686,288 +930,6 @@ main {
 
 /*Страница с инфой об игре*/
 
-/*Страница с игрой*/
-
-.gameBackground {
-    width: 67%;
-    display: flex;
-    margin: 2vw auto;
-    border: .25vw var(--color-basic) solid;
-    border-radius: 1vw;
-}
-
-.gameMenu {
-    display: flex;
-    width: 22vw;
-    /*padding: 6vw 0;*/
-    height: 45vw;
-    background-color: var(--color-basic);
-    border-radius: .5vw 0 0 .5vw;
-    flex-direction: column;
-    justify-content: space-between;
-}
-
-.gameMenu .menuBottom {
-    background-color: var(--color-white);
-    width: 99%;
-    height: 60%;
-    border-radius: 0 0 0 0.75vw;
-}
-
-.gameMenu .menuTop {
-    height: 40%;
-    display: flex;
-    padding: 9% 18%;
-    flex-direction: column;
-    justify-content: space-between;
-}
-
-.menuTop .title {
-    font-family: 'Futura';
-    font-weight: 600;
-    font-size: 1.5vw;
-    text-align: center;
-    color: var(--color-white);
-}
-
-.versusInfo {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.versusInfo .playerInfo {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.versusInfo span {
-    color: var(--color-white);
-    font-family: 'Futura';
-    font-weight: 600;
-    text-align: center;
-    font-size: 1.5vw;
-    margin-bottom: 1.5vw;
-}
-
-.playerInfo img {
-    width: 5vw;
-    transition: border 0.4s, scale 0.4s;
-}
-
-.playerInfo .selected {
-    border: 0.3vw var(--color-light-blue) solid;
-    border-radius: 50%;
-    scale: .96;
-}
-
-.playerInfo .playerName {
-    color: var(--color-white);
-    font-family: 'Futura';
-    font-weight: 450;
-    text-align: center;
-    font-size: 1.25vw;
-    margin-top: 0.5vw;
-}
-
-.menuTop .stepTimer {
-    color: var(--color-white);
-    font-family: 'Futura';
-    font-weight: 450;
-    text-align: center;
-    font-size: 1.25vw;
-    margin-top: 0.5vw;
-}
-
-.leave-game {
-    height: 23%;
-    background-color: var(--color-white);
-    border-radius: 1vw;
-    font-family: 'Futura';
-    font-weight: 700;
-    font-size: 1.2vw;
-    line-height: 1.9vw;
-    text-align: center;
-    color: var(--color-basic);
-}
-
-.leave-game:active {
-    scale: .95;
-}
-
-.gameField {
-    width: 41vw;
-    height: 41vw;
-    padding: 2vw;
-    background-color: var(--color-white);
-    border-radius: 0px .75vw .75vw 0px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    overflow: auto;
-}
-
-/*Страница с игрой*/
-
-
-/*Календарь с монетками*/
-
-.calendar_window {
-    background: var(--color-white);
-    border-radius: 1.4vw;
-    padding: 3vw;
-    width: 48vw;
-    height: 30vw;
-    margin: 5vw auto;
-}
-
-.calendar_money_button {
-    flex-wrap: wrap;
-    width: 75%;
-    display: flex;
-    margin: 1vw auto;
-}
-
-.calendar_money_button_two {
-    display: flex;
-    transform: scale(1.3);
-    margin: auto;
-}
-
-.button_with_day {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    margin: 0.9vw auto;
-}
-
-.button_with_day_text {
-    font-family: 'Futura';
-    font-weight: 700;
-    font-size: 1.5vw;
-    text-align: center;
-    color: var(--color-basic);
-
-}
-
-.calendar_money_button_two .calendar_button {
-    margin-right: 1vw;
-    margin-left: 1vw;
-}
-
-.title__calendar {
-    font-family: 'Tith';
-    font-size: 5vw;
-    line-height: 1.9vw;
-    margin-top: 2vw;
-    color: var(--color-basic);
-}
-
-.button_wrap {
-    flex-wrap: wrap;
-}
-
-.calendar_button {
-    flex-direction: column;
-    align-items: center;
-    border: 0.2vw var(--color-basic) solid;
-    border-radius: 0.63vw;
-    padding-right: 2vw;
-    padding-left: 2vw;
-    margin: 0.5vw auto;
-}
-
-.img_money {
-    width: 3.3vw;
-    height: 3.3vw;
-    margin-top: 1vw;
-}
-
-.flex-item {
-    font-family: 'Tith';
-    font-size: 2.6vw;
-    text-align: center;
-    color: var(--color-basic);
-}
-
-.current_button:hover {
-    scale: .95;
-    transition: .2s;
-    cursor: pointer;
-}
-
-.calendar_window_prize {
-    background: var(--color-white);
-    border-radius: 1.4vw;
-    padding: 3vw;
-    width: 35vw;
-    height: 33vw;
-    margin: 5vw auto;
-}
-
-.calendar_prize {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-.img_money_prize {
-    width: 10.3vw;
-    height: 10.3vw;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 4vw;
-    margin-bottom: 2vw;
-}
-
-.flex-item-prize {
-    font-family: 'Tith';
-    font-size: 6.6vw;
-    color: var(--color-basic);
-}
-
-.title__calendar_prize {
-    font-family: 'Tith';
-    font-size: 5vw;
-    text-align: center;
-    line-height: 1.9vw;
-    margin-top: 2vw;
-    color: var(--color-basic);
-}
-
-.prize_button {
-    display: inline-block;
-    width: 18.75vw;
-    height: 2.7vw;
-    padding-top: 1vw;
-    font-family: 'Futura';
-    font-weight: 450;
-    font-size: 1.25vw;
-    line-height: 1.6vw;
-    text-align: center;
-    color: var(--color-white);
-    background-color: var(--color-basic);
-    margin: 0 auto;
-    border: none;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    border-radius: 0.63vw;
-    margin-top: 1vw;
-    margin-bottom: 3vw;
-}
-
-.prize_button:hover {
-    scale: .95;
-    transition: .2s;
-    cursor: pointer;
-}
-
-/*Календарь с монетками*/
-
 /*Повторяющиеся элементы*/
 #header_login,
 #structure,
@@ -1975,6 +937,11 @@ main {
     display: none;
 }
 
+.smiles_box img:hover,
+#password_menu button:hover,
+.current_button:hover,
+.prize_button:hover,
+.message_box button:hover,
 .button__link:hover,
 .button__icons:hover,
 .button__rectangle:hover,
@@ -2019,4 +986,399 @@ main {
     font-weight: 450;
     font-size: 1.25vw;
     margin-bottom: 1vw;
+}
+
+@media (max-width: 800px) {
+
+    /*Header*/
+
+    .header__center {
+        visibility: hidden;
+        opacity: 0;
+    }
+
+    .phoneMenu {
+        display: block;
+        width: 6vw;
+        height: 6vw;
+        background: var(--color-basic);
+        color: var(--color-white);
+        border-radius: .625vw;
+    }
+
+    .phoneMenu span {
+        display: none;
+    }
+
+    .phoneMenu svg path {
+        fill: var(--color-white);
+    }
+
+    .phoneMenu:hover span {
+        display: block;
+    }
+
+    .phoneMenu:hover svg {
+        display: none;
+    }
+
+    .header__wrapper {
+        padding-top: 2vw;
+        padding-bottom: 1.5vw;
+    }
+
+    .header__right .button__icons {
+        display: none;
+    }
+
+    .header__center {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        background: var(--color-basic);
+        box-shadow: 0 10px 20px 0 #000;
+        border-radius: 0 0 12px 12px;
+        transition: .5s ease-in-out;
+        z-index: 50;
+    }
+
+    .header__center .button__link {
+        width: 45vw;
+        height: 7vw;
+        font-size: 5vw;
+        line-height: 6.3vw;
+        background: var(--color-hover);
+        margin: 4vh 0;
+    }
+
+    .menu-button+.menu-button {
+        margin-left: 0;
+        margin-top: 0;
+    }
+
+    .header__name {
+        font-size: 4vw;
+    }
+
+    .header__logo {
+        width: 9vw;
+        height: 9vw;
+    }
+
+    .button__profile {
+        width: auto;
+        height: auto;
+        background: transparent;
+    }
+
+    .menu-button .icon {
+        width: 8vw;
+        height: 8vw;
+        border: 0.25vw solid var(--color-basic);
+        border-radius: 50%;
+    }
+
+    .menu-button .tick {
+        display: none;
+    }
+
+    .header__center,
+    .menu-drop {
+        top: 12.45vw;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 65vw;
+    }
+
+    #header_unlogin .button__link {
+        width: 12vw;
+        height: 6vw;
+        font-size: 4vw;
+        line-height: 5.3vw;
+    }
+
+    /*Header*/
+
+    .blue__rectangle {
+        height: auto;
+    }
+
+    .white__square {
+        width: 80%;
+        margin-bottom: 2vh;
+        height: auto;
+    }
+
+    .neheader__name {
+        font-size: 3.5vh;
+        line-height: 3vh;
+    }
+
+    .neheader__text {
+        font-size: 1.9vh;
+        line-height: 2.5vh;
+    }
+
+    .neheader__logo {
+        height: 5vh;
+        width: 5vh;
+    }
+
+    /*Игры*/
+
+    .gametitle {
+        margin-bottom: 5vh;
+    }
+
+    .namegame {
+        font-size: 4.8vw;
+    }
+
+    .img-game {
+        width: 35vw;
+        height: 35vw;
+    }
+
+    /*Игры*/
+
+    /*Главная*/
+
+    .main__wrapper {
+        flex-direction: column;
+        align-items: center;
+        height: auto;
+    }
+
+    .main_title {
+        font-size: 5vh;
+        line-height: 3.6vh;
+        padding: 2vh 0;
+    }
+
+    .title_catalog {
+        padding: 6vh 0;
+    }
+
+    .white_rectangle {
+        width: 30vh;
+        height: 39vh;
+        border-radius: .625vh;
+        margin-bottom: 6vh;
+        padding: 3.3vh 0;
+    }
+
+    .white_rectangle .title {
+        font-size: 2.8vh;
+        line-height: 2.3vh;
+    }
+
+    .white_rectangle
+    .button__rectangle {
+        width: 18.75vh;
+        height: 2.7vh;
+        padding-top: 1vh;
+        font-size: 1.25vh;
+        line-height: 1.6vh;
+    }
+
+    .top_player {
+        padding: 0 2.6vh;
+    }
+
+    .top_player .top-nickname,
+    .top_player .score {
+        font-size: 1.5vh;
+        line-height: 1.6vh;
+    }
+
+    .top_player .avatar,
+    .small__grey__rectangle .avatar {
+        width: 2.9vh;
+        height: 2.9vh;
+    }
+
+    .top_player .nickname {
+        margin-left: 1vh;
+    }
+
+    .player_stats {
+        align-items: center;
+    }
+    /*Главная*/
+
+    /*Модальные окна*/
+
+    .modal_window {
+        min-height: 200vh;
+    }
+
+    .registration_window,
+    .confirmation_window,
+    .thanksforpay_window,
+    .succesregistration_window {
+        border-radius: 1.4vh;
+        padding: 2vh 3.3vh 3.3vh;
+    }
+
+    .modal_window .registration_window {
+        width: 30vh;
+        height: 48vh;
+        margin: 20vh auto;
+    }
+
+    .modal_window .confirmation_window {
+        width: 30vh;
+        height: 15vh;
+        margin: 13vh auto;
+    }
+
+    .modal_window .thanksforpay_window {
+        width: 20vh;
+        height: 10vh;
+        margin: 17vh auto;
+    }
+
+    .modal_window .succesregistration_window {
+        width: 20vh;
+        height: 10vh;
+        margin: 17vh auto;
+    }
+
+    .button__thanksforpay {
+        line-height: 1vh;
+        font-size: 1.5vh;
+    }
+
+    .button__succesregistration {
+        line-height: 1vh;
+        font-size: 1.5vh;
+    }
+
+    .button__confirmation {
+        line-height: 1vh;
+        font-size: 1.5vh;
+    }
+
+    .title__confirmation__window {
+        font-size: 1.45vh;
+        line-height: 1.9vh;
+    }
+
+    .description__confirmation__window {
+        font-size: 1.4vh;
+        line-height: 1vh;
+    }
+
+    .modal_window .large-size {
+        height: 78.4vh;
+        margin: 4.2vh auto;
+    }
+
+    .registration_window .title {
+        font-size: 5vh;
+        line-height: 3.6vh;
+    }
+
+    .modal_input {
+        width: calc(100% - 1.25vh);
+        padding-left: 1.25vh;
+        border-radius: .9vh;
+        margin-bottom: .625vh;
+        font-size: 2.25vh;
+        line-height: 1.6vh;
+    }
+
+    .support_flex {
+        margin-bottom: 3vh;
+    }
+
+    .modal_support {
+        font-size: 2.5vw;
+        line-height: 2.35vh;
+    }
+
+    .login_button,
+    .reg_button {
+        line-height: 7.4vw;
+    }
+
+    .login_button {
+        font-size: 5.8vw;
+    }
+
+    .reg_button {
+        font-size: 4.25vw;
+    }
+
+    .error-message {
+        border-radius: .9vh;
+        margin-bottom: .625vh;
+        font-size: 1.25vh;
+        line-height: 1.6vh;
+        padding: .8vh 1.25vh;
+    }
+
+    /*gameinfo*/
+    .namegame_rectangle {
+        height: auto;
+    }
+    /*gameinfo*/
+
+    .botton-line-chess {
+        margin-bottom: 4.3vw;
+        flex-wrap: wrap;
+        gap: 1.8vw 6.6vw;
+    }
+
+    .functions {
+        margin: 0;
+    }
+
+    .button_game {
+        margin-left: 0;
+        font-size: 3vw;
+        height: 2.5vw;
+        width: 28vw;
+        padding-top: 1.5vw;
+        margin-bottom: 1vw;
+    }
+
+    .rook_img {
+        width: 17vw;
+        height: 17vw;
+    }
+
+    .title_rate {
+        font-size: 4vw;
+        padding-top: 3.5vw;
+    }
+
+    .right_button-white {
+        width: 5vw;
+        height: 5vw;
+    }
+
+    .right_button-white .back_image {
+        height: 3.2vw;
+    }
+
+    .right_button-white:first-child {
+        display: none;
+    }
+
+    .counter-chess {
+        margin: 3.5vw auto;
+    }
+
+    .counter-chess .counter {
+        padding: 0 3vw;
+    }
+
+    .counter .counter-p {
+        font-size: 6vw;
+    }
+
+    .counter .text {
+        font-size: 3.5vw;
+    }
 }

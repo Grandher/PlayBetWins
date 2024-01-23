@@ -1,7 +1,7 @@
-$(function() {
+$(function () {
     $.post("scripts/getHeaderInfo.php", {}, function (data) {
         if (data === "NotSession") {
-            $(".header__left").attr("href","index.html");
+            $(".header__left").attr("href", "index.html");
         } else {
             data = JSON.parse(data);
             if (data.Avatar) {
@@ -16,21 +16,43 @@ $(function() {
                 $(this).text(statistic[i++]);
             });
             $("#header_unlogin").hide();
-            $("#header_login").css("display","flex");
+            $("#header_login").css("display", "flex");
         }
 
     });
     $.post("scripts/getGames.php", {}, function (data) {
         data = JSON.parse(data);
-        for (let i = 0; i < data.length; i++) {
-            let game = $("#structure .gametitle").clone();
-            $(game).attr("href","gameinfo.html?" + data[i].Name);
-            $(game).find(".namegame").text(data[i].Title);
 
-            $(game).find(".img-game").attr("gameID", data[i].GameID);
-            $(game).find(".img-game").attr("src", `img/games/${data[i].Name}.svg`);
-            $(game).find(".img-game").attr("alt", `${data[i].Title} картинка`);
-            $(".main__wrapper").append(game);
+        let loadedGames = 0;
+        let loadedImages = [];
+        let loadedTitles = [];
+        let loadedLinks = [];
+
+        for (let i = 0; i < data.length; i++) {
+
+            loadedTitles[i] = data[i].Title;
+            loadedLinks[i] = "gameinfo.html?" + data[i].Name;
+
+            $.get(`img/games/${data[i].Name}.svg`, function (svgContent) {
+
+                svgContent = $(svgContent).find('svg');
+                $(svgContent).addClass('img-game');
+                $(svgContent).attr("gameID", data[i].GameID);
+
+                loadedImages[i] = svgContent;
+                loadedGames++;
+
+                if (loadedGames === data.length) {
+
+                    for (let j = 0; j < loadedImages.length; j++) {
+                        let game = $('<a class="gametitle"></a>');
+                        $(game).attr("href", loadedLinks[j]);
+                        $(game).html(loadedImages[j]);
+                        $(game).append(`<div class="namegame">${loadedTitles[j]}</div>`);
+                        $(".main__wrapper").append(game.clone());
+                    }
+                }
+            });
         }
     });
 

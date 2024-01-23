@@ -1,4 +1,5 @@
 $(function () {
+    let CHAT_LEN = 0;
     $.post("scripts/getGameInfo.php", {}, function (data) {
         if (data === "401") {
             window.location.href = 'index.html';
@@ -46,6 +47,71 @@ $(function () {
             });
         }
     });
+
+    $.post("scripts/getPeopleShop.php", {}, function (data) {
+        data = JSON.parse(data);
+        for (let i = 0; i < data.length; i++) {
+            let image = $("#structure .smile").clone(true);
+            if (data[i].Type == 2) {
+                $(image).attr("src", `img/store/smiles/${data[i].Name}.svg`);
+                $(image).attr("alt", `${data[i].Name} smile`);
+                $(image).attr("ProductID", data[i].ProductID);
+                $(".smiles_box").append(image);
+            }
+        }
+        if ($(".smiles_box img").length == 0) {
+            $(".smiles_box").append("<p>У вас нет смайликов для общения :с</p>")
+        }
+    });
+
+    $(".smile").click(function () {
+        $.post("scripts/addMessage.php", {
+            'MatchID': window.gameData.MatchID,
+            'Message': null,
+            'Smile': $(this).attr("ProductID")
+        }, function (data) {
+        });
+    });
+
+    $(".message_box button").click(function () {
+        $.post("scripts/addMessage.php", {
+            'MatchID': window.gameData.MatchID,
+            'Message': $(this).text(),
+            'Smile': null
+        }, function (data) {
+        });
+    });
+
+    TIMER = setInterval(function () {
+        $.post("scripts/getMessage.php", {
+            'MatchID': window.gameData.MatchID
+        }, function (data) {
+            data = JSON.parse(data);
+            if (data.length > CHAT_LEN) {
+                CHAT_LEN = data.length;
+                $("#chat").empty();
+                for (let i = 0; i < data.length; i++) {
+                    let message = $("#structure .message").clone();
+                    if (data[i].AuthorID == window.gameData.Player) {
+                        $(message).addClass("user");
+                    }
+                    if (data[i].Avatar) {
+                        $(message).find("img").attr("src", `img/store/avatars/${data[i].Avatar}.svg`);
+                    }
+                    if (data[i].Smile) {
+                        let smile = $(`<img src="img/store/smiles/${data[i].Smile}.svg" alt="${data[i].Smile} smile">`);
+                        $(message).find(".content").append(smile);
+                    } else if (data[i].Content) {
+                        let span = $(`<span>${data[i].Content}</span>`);
+                        $(message).find(".content").append(span);
+                    }
+                    $(message).find(".date").text(data[i].Time.slice(11, 16));
+                    $("#chat").append(message);
+                }
+                $("#chat").scrollTop($("#chat")[0].scrollHeight);
+            }
+        });
+    }, 1000);
 
     $(".leave-game").click(function () {
         $("body").css("overflow", "hidden");

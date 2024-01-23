@@ -1,0 +1,258 @@
+/*Главная после авторизации*/
+main {
+    width: 100%;
+    background-color: var(--color-ground);
+    box-shadow: inset 0 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.main__one_page {
+    height: 100%;
+}
+
+.white_rectangle {
+    width: 24vw;
+    height: 35vw;
+    background: var(--color-white);
+    border-radius: .625vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-bottom: 6vw;
+    padding: 1.3vw 0;
+}
+
+.white_rectangle .title {
+    font-family: Futura;
+    font-weight: 600;
+    font-size: 1.8vw;
+    line-height: 2.3vw;
+    text-align: center;
+    color: var(--color-basic);
+}
+
+.checkmark_info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 18.85vw;
+    height: 9vw;
+    background: var(--color-white);
+    border: 1px solid var(--color-basic);
+    text-align: center;
+    border-radius: .7vw;
+    font-family: Futura;
+    font-weight: 450;
+    font-size: 1.1vw;
+    line-height: 1.1vw;
+    margin: 0 auto;
+    padding: 1.2vw .9vw;
+    color: var(--color-black);
+}
+
+.white_rectangle .present {
+    width: 7.8vw;
+    height: 9vw;
+    transition: scale 1s, transform 1s ease-in-out;
+    margin: 0 auto;
+}
+
+.white_rectangle .present:hover {
+    scale: 1.1;
+}
+
+.games_square {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 2vw;
+}
+
+.games_square .game_image {
+    width: 7.8vw;
+    height: 7.8vw;
+    transition: scale .5s;
+    padding: 1vw;
+}
+
+.games_square .game_image:hover {
+    scale: 1.15;
+}
+
+/*Главная после авторизации*/
+
+/*Календарь с монетками*/
+
+.calendar_window {
+    background: var(--color-white);
+    border-radius: 1.4vw;
+    padding: 3vw;
+    width: 48vw;
+    height: 30vw;
+    margin: 5vw auto;
+}
+
+.calendar_money_button {
+    flex-wrap: wrap;
+    width: 75%;
+    display: flex;
+    margin: 1vw auto;
+}
+
+.calendar_money_button_two {
+    display: flex;
+    transform: scale(1.3);
+    margin: auto;
+}
+
+.button_with_day {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0.9vw auto;
+}
+
+.button_with_day_text {
+    font-family: 'Futura';
+    font-weight: 700;
+    font-size: 1.5vw;
+    text-align: center;
+    color: var(--color-basic);
+
+}
+
+.calendar_money_button_two .calendar_button {
+    margin-right: 1vw;
+    margin-left: 1vw;
+}
+
+.title__calendar {
+    font-family: 'Tith';
+    font-size: 5vw;
+    line-height: 1.9vw;
+    margin-top: 2vw;
+    color: var(--color-basic);
+}
+
+.button_wrap {
+    flex-wrap: wrap;
+}
+
+.calendar_button {
+    flex-direction: column;
+    align-items: center;
+    border: 0.2vw var(--color-basic) solid;
+    border-radius: 0.63vw;
+    padding-right: 2vw;
+    padding-left: 2vw;
+    margin: 0.5vw auto;
+}
+
+.img_money {
+    width: 3.3vw;
+    height: 3.3vw;
+    margin-top: 1vw;
+}
+
+.flex-item {
+    font-family: 'Tith';
+    font-size: 2.6vw;
+    text-align: center;
+    color: var(--color-basic);
+}
+
+.calendar_window_prize {
+    background: var(--color-white);
+    border-radius: 1.4vw;
+    padding: 3vw;
+    width: 35vw;
+    height: 33vw;
+    margin: 5vw auto;
+}
+
+.calendar_prize {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.img_money_prize {
+    width: 10.3vw;
+    height: 10.3vw;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 4vw;
+    margin-bottom: 2vw;
+}
+
+.flex-item-prize {
+    font-family: 'Tith';
+    font-size: 6.6vw;
+    color: var(--color-basic);
+}
+
+.title__calendar_prize {
+    font-family: 'Tith';
+    font-size: 5vw;
+    text-align: center;
+    line-height: 1.9vw;
+    margin-top: 2vw;
+    color: var(--color-basic);
+}
+
+.prize_button {
+    display: inline-block;
+    width: 18.75vw;
+    height: 2.7vw;
+    padding-top: 1vw;
+    font-family: 'Futura';
+    font-weight: 450;
+    font-size: 1.25vw;
+    line-height: 1.6vw;
+    text-align: center;
+    color: var(--color-white);
+    background-color: var(--color-basic);
+    margin: 0 auto;
+    border: none;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 0.63vw;
+    margin-top: 1vw;
+    margin-bottom: 3vw;
+}
+
+/*Календарь с монетками*/
+
+@media (max-width: 800px) {
+
+    /*Главная*/
+    
+
+    .checkmark_info {
+        width: 18.85vh;
+        height: 9vh;
+        border-radius: .7vh;
+        font-size: 1.1vh;
+        line-height: 1.1vh;
+        padding: 1.2vh .9vh;
+    }
+
+    .white_rectangle .present {
+        width: 7.8vh;
+        height: 9vh;
+    }
+
+    .games_square {
+        padding: 2vh;
+        justify-content: center;
+    }
+
+    .games_square .game_image {
+        width: 9.8vh;
+        height: 9.8vh;
+        padding: 1vh;
+    }
+
+    /*Главная*/
+}

@@ -7,7 +7,7 @@ if (isset($_SESSION['id']) and isset($_POST['game'])) {
     $game = $_POST['game'];
 
     // Запрос для поиска уже существующего матча в данной игре
-    $query = $DBH->prepare("SELECT MatchID, Time, CURRENT_TIMESTAMP AS CurrentTime
+    $query = $DBH->prepare("SELECT MatchID, Time, datetime(CURRENT_TIMESTAMP, '+4 hours') AS CurrentTime
                             FROM Match WHERE Status = 0 AND GameID = :game AND (PlayerID_1 = :id OR PlayerID_2 = :id);");
     $query->bindParam("id", $id, PDO::PARAM_INT);
     $query->bindParam("game", $game, PDO::PARAM_INT);

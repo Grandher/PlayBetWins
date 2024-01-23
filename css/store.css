@@ -1,0 +1,77 @@
+@media (max-width: 800px) {
+    /*Магазин*/
+
+    .blocks {
+        width: 80%;
+        margin: 3vh auto;
+        flex-direction: column;
+    }
+
+    .borderElement1 {
+        width: auto;
+        height: auto;
+        padding: 0;
+        flex-direction: row;
+        justify-content: space-around;
+        border-radius: 1.3vh 1.3vh 0 0;
+    }
+
+    .borderElement2 {
+        width: auto;
+        height: auto;
+        border-radius: 0 0 1.3vh 1.3vh;
+        min-height: 10vh;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        justify-items: center;
+    }
+
+    .borderElement1 .menu_section {
+        padding: 0 2vw;
+    }
+
+    .borderElement1 .title {
+        margin: 1.5vh 0;
+    }
+
+    .borderElement1 .text {
+        font-size: 2.5vw;
+    }
+
+    .menu_section .shopicons {
+        width: 3.5vw;
+        height: 3.5vw;
+        margin-bottom: .8vw;
+    }
+
+    .borderElement2 .shopbottom {
+        padding: 1vh 0;
+    }
+
+    .shopcatalog {
+        width: auto;
+        height: auto;
+        margin: 0.5vw 1vw 1.5vw 1vw;
+    }
+
+    .pricebutton {
+        width: 16vw;
+        height: 6vw;
+        font-size: 3.8vw;
+        border-radius: 0.75vh;
+    }
+
+    .pricebutton .icon {
+        width: 3vw;
+        height: 3vw;
+        margin-left: 0.75vw;
+    }
+
+    .shopcatalog .img-game {
+        width: 16vw;
+        height: 16vw;
+        border: .75vw solid;
+    }
+
+    /*Магазин*/
+}

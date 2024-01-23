@@ -85,19 +85,31 @@ $(function () {
             window.location.href = 'index.html';
         } else {
             data = JSON.parse(data);
-            for (let i = 0; i < data.length; i++) {
-                let lastGame = $("#structure .game_image").parent().clone();
-                $(lastGame).attr("href", "gameinfo.html?" + data[i].Name);
-                $(lastGame).find("img").attr("src", `img/games/${data[i].Name}.svg`);
-                $(lastGame).find("img").attr("alt", `${data[i].Title} картинка`);
-                $(".games_square").append(lastGame);
-            }
 
-            if (data.length == 0) {
-                $(".games_square").append("<p>Пока нет игр :с</p>");
+            let loadedImages = [];
+            let loadedLinks = [];
+            for (let i = 0; i < data.length; i++) {
+                loadedLinks[i] = "gameinfo.html?" + data[i].Name;
+
+                $.get(`img/games/${data[i].Name}.svg`, function (svgContent) {
+                    svgContent = $(svgContent).find('svg');
+                    $(svgContent).addClass('game_image');
+                    loadedImages[i] = svgContent;
+
+                    if (loadedImages.length === data.length) {
+
+                        for (let j = 0; j < loadedImages.length; j++) {
+                            let currentGame = $("<a></a>").html(loadedImages[j]);
+                            $(currentGame).attr("href", loadedLinks[j]);
+                            $(".games_square").append(currentGame);
+                        }
+                        if (data.length === 0) {
+                            $(".games_square").append("<p>Пока нет игр :с</p>");
+                        }
+                    }
+                });
             }
         }
-
     });
 
     $(".button_with_day").click(function () {

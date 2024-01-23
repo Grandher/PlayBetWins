@@ -18,7 +18,7 @@ if (isset($_SESSION['id']) and isset($_POST['matchID'])) {
 
     if ($move == 1) {
         if ($match['PlayerID_1'] == $player) {
-            $query = $DBH->prepare("UPDATE 'BattleShip' SET TimeLastMove = CURRENT_TIMESTAMP, Field1First = :boardState ,Field2Second = :EnemyField WHERE MatchID = :matchID;");
+            $query = $DBH->prepare("UPDATE 'BattleShip' SET TimeLastMove = datetime(CURRENT_TIMESTAMP, '+4 hours'), Field1First = :boardState ,Field2Second = :EnemyField WHERE MatchID = :matchID;");
             $query->bindParam("matchID", $matchID, PDO::PARAM_INT);
             $query->bindParam("boardState", $boardState, PDO::PARAM_STR);
             $query->bindParam("EnemyField", $enemyField, PDO::PARAM_STR);
@@ -29,7 +29,7 @@ if (isset($_SESSION['id']) and isset($_POST['matchID'])) {
                 echo '500';
             }
         } else {
-            $query = $DBH->prepare("UPDATE 'BattleShip' SET TimeLastMove = CURRENT_TIMESTAMP, Field1Second = :boardState, Field2First = :EnemyField WHERE MatchID = :matchID;");
+            $query = $DBH->prepare("UPDATE 'BattleShip' SET TimeLastMove = datetime(CURRENT_TIMESTAMP, '+4 hours'), Field1Second = :boardState, Field2First = :EnemyField WHERE MatchID = :matchID;");
             $query->bindParam("matchID", $matchID, PDO::PARAM_INT);
             $query->bindParam("boardState", $boardState, PDO::PARAM_STR);
             $query->bindParam("EnemyField", $enemyField, PDO::PARAM_STR);
@@ -42,7 +42,7 @@ if (isset($_SESSION['id']) and isset($_POST['matchID'])) {
         }
     } else {
         if ($match['PlayerID_1'] == $player) {
-            $query = $DBH->prepare("UPDATE 'BattleShip' SET TimeLastMove = CURRENT_TIMESTAMP, Field1First = :boardState ,Field2Second = :EnemyField, whoseMove = :whoseMove WHERE MatchID = :matchID;");
+            $query = $DBH->prepare("UPDATE 'BattleShip' SET TimeLastMove = datetime(CURRENT_TIMESTAMP, '+4 hours'), Field1First = :boardState ,Field2Second = :EnemyField, whoseMove = :whoseMove WHERE MatchID = :matchID;");
             $query->bindParam("matchID", $matchID, PDO::PARAM_INT);
             $query->bindParam("whoseMove", $whoseMove, PDO::PARAM_INT);
             $query->bindParam("boardState", $boardState, PDO::PARAM_STR);
@@ -54,7 +54,7 @@ if (isset($_SESSION['id']) and isset($_POST['matchID'])) {
                 echo '500';
             }
         } else {
-            $query = $DBH->prepare("UPDATE 'BattleShip' SET TimeLastMove = CURRENT_TIMESTAMP, Field1Second = :boardState, Field2First = :EnemyField, whoseMove = :whoseMove WHERE MatchID = :matchID;");
+            $query = $DBH->prepare("UPDATE 'BattleShip' SET TimeLastMove = datetime(CURRENT_TIMESTAMP, '+4 hours'), Field1Second = :boardState, Field2First = :EnemyField, whoseMove = :whoseMove WHERE MatchID = :matchID;");
             $query->bindParam("matchID", $matchID, PDO::PARAM_INT);
             $query->bindParam("whoseMove", $whoseMove, PDO::PARAM_INT);
             $query->bindParam("boardState", $boardState, PDO::PARAM_STR);

@@ -72,7 +72,7 @@ $(function () {
                     $(".balance span").text(balance - parseInt($(thisButton).find(".text").text()));
                     $(thisButton).addClass("disabled");
                     //$(thisButton).parent().find(".shopcatalog img").css("filter", "grayscale(100%)");
-                    $(thisButton).parent().find(".shopcatalog .img-game").css("border", ".25vw solid var(--color-light-grey)");
+                    $(thisButton).parent().find(".shopcatalog .img-game").css("border-color", "var(--color-light-grey)");
                     $(thisButton).find(".text").text("Куплено");
 
                     $("body").css("overflow", "hidden");
@@ -121,7 +121,7 @@ $(function () {
                         PEOPLE_ITEMS[j].ProductID == SHOP[i].ProductID) {
                         $(shop).find(".pricebutton").addClass("disabled");
                         //$(shop).find(".shopcatalog img").css("filter", "grayscale(100%)");
-                        $(shop).find(".shopcatalog .img-game").css("border", ".25vw solid var(--color-light-grey)");
+                        $(shop).find(".shopcatalog .img-game").css("border-color", "var(--color-light-grey)");
                         $(shop).find(".pricebutton .text").text("Куплено");
                     }
                 }

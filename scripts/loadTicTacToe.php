@@ -21,7 +21,7 @@ if (isset($_SESSION['id']) and isset($_POST['matchID'])) {
     }
 
     // Запрос на наличие игры
-    $query = $DBH->prepare("SELECT * FROM 'tic-tac-toe' WHERE MatchID = :matchID;");
+    $query = $DBH->prepare("SELECT *, datetime(CURRENT_TIMESTAMP, '+4 hours') AS CurrentTime FROM 'tic-tac-toe' WHERE MatchID = :matchID;");
     $query->bindParam("matchID", $matchID, PDO::PARAM_INT);
     $query->execute();
     $line = $query->fetch(PDO::FETCH_ASSOC);

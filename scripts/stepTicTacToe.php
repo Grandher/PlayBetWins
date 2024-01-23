@@ -9,7 +9,7 @@ if (isset($_SESSION['id']) and isset($_POST['matchID'])) {
     $whoseMove = $_POST['whoseMove'];
 
     // Запрос на наличие игры
-    $query = $DBH->prepare("UPDATE 'tic-tac-toe' SET TimeLastMove = CURRENT_TIMESTAMP, Field = :boardState, whoseMove = :whoseMove WHERE MatchID = :matchID;");
+    $query = $DBH->prepare("UPDATE 'tic-tac-toe' SET TimeLastMove = datetime(CURRENT_TIMESTAMP, '+4 hours'), Field = :boardState, whoseMove = :whoseMove WHERE MatchID = :matchID;");
     $query->bindParam("matchID", $matchID, PDO::PARAM_INT);
     $query->bindParam("whoseMove", $whoseMove, PDO::PARAM_INT);
     $query->bindParam("boardState", $boardState, PDO::PARAM_STR);
